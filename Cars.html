@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتب تأجير السيارات</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="cars-page">
+
+<div class="container">
+
+<h1>قائمة السيارات المتاحة للتأجير</h1>
+
+<p class="description">
+اختر السيارة المناسبة لك وتعرف على مواصفاتها
+</p>
+
+<div class="table-wrapper">
+<table>
+
+<thead>
+<tr>
+<th>الصورة</th>
+<th>اسم السيارة</th>
+<th>سنة الصنع</th>
+<th>السعر اليومي</th>
+<th>التفاصيل</th>
+<th>الاختيار</th>
+</tr>
+</thead>
+
+<tbody>
+
+<!-- السيارة الأولى -->
+<tr>
+<td>
+<img class="car-image"
+src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400"
+alt="Toyota Camry">
+</td>
+<td class="car-name">Toyota Camry</td>
+<td>2023</td>
+<td class="price">45$</td>
+<td><button class="details-btn">إظهار التفاصيل</button></td>
+<td><button class="select-btn">اختيار</button></td>
+</tr>
+
+<tr class="details-row">
+<td colspan="6">
+<h3 class="details-title">مواصفات Toyota Camry</h3>
+<table class="details-table">
+<tr><th>المواصفة</th><th>القيمة</th></tr>
+<tr><td>نوع الوقود</td><td>بنزين</td></tr>
+<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
+<tr><td>عدد المقاعد</td><td>5</td></tr>
+<tr><td>عداد الكيلومترات</td><td>25,000 كم</td></tr>
+<tr><td>اللون</td><td>أبيض</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- السيارة الثانية -->
+<tr>
+<td>
+<img class="car-image"
+src="https://i.blogs.es/2a9ec7/hyundai-elantra-2022-mexico_6/2560_3000.jpeg"
+alt="Hyundai Elantra">
+</td>
+<td class="car-name">Hyundai Elantra</td>
+<td>2022</td>
+<td class="price">35$</td>
+<td><button class="details-btn">إظهار التفاصيل</button></td>
+<td><button class="select-btn">اختيار</button></td>
+</tr>
+
+<tr class="details-row">
+<td colspan="6">
+<h3 class="details-title">مواصفات Hyundai Elantra</h3>
+<table class="details-table">
+<tr><th>المواصفة</th><th>القيمة</th></tr>
+<tr><td>نوع الوقود</td><td>بنزين</td></tr>
+<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
+<tr><td>عدد المقاعد</td><td>5</td></tr>
+<tr><td>عداد الكيلومترات</td><td>32,000 كم</td></tr>
+<tr><td>اللون</td><td>فضي</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- السيارة الثالثة -->
+<tr>
+<td>
+<img class="car-image"
+src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=400"
+alt="Kia Sportage">
+</td>
+<td class="car-name">Kia Sportage</td>
+<td>2024</td>
+<td class="price">55$</td>
+<td><button class="details-btn">إظهار التفاصيل</button></td>
+<td><button class="select-btn">اختيار</button></td>
+</tr>
+
+<tr class="details-row">
+<td colspan="6">
+<h3 class="details-title">مواصفات Kia Sportage</h3>
+<table class="details-table">
+<tr><th>المواصفة</th><th>القيمة</th></tr>
+<tr><td>نوع الوقود</td><td>بنزين</td></tr>
+<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
+<tr><td>عدد المقاعد</td><td>5</td></tr>
+<tr><td>عداد الكيلومترات</td><td>15,000 كم</td></tr>
+<tr><td>اللون</td><td>أسود</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- السيارة الرابعة -->
+<tr>
+<td>
+<img class="car-image"
+src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400"
+alt="Mercedes C200">
+</td>
+<td class="car-name">Mercedes C200</td>
+<td>2023</td>
+<td class="price">85$</td>
+<td><button class="details-btn">إظهار التفاصيل</button></td>
+<td><button class="select-btn">اختيار</button></td>
+</tr>
+
+<tr class="details-row">
+<td colspan="6">
+<h3 class="details-title">مواصفات Mercedes C200</h3>
+<table class="details-table">
+<tr><th>المواصفة</th><th>القيمة</th></tr>
+<tr><td>نوع الوقود</td><td>بنزين</td></tr>
+<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
+<tr><td>عدد المقاعد</td><td>5</td></tr>
+<tr><td>عداد الكيلومترات</td><td>18,000 كم</td></tr>
+<tr><td>اللون</td><td>رمادي</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- السيارة الخامسة -->
+<tr>
+<td>
+<img class="car-image"
+src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400"
+alt="BMW 320i">
+</td>
+<td class="car-name">BMW 320i</td>
+<td>2022</td>
+<td class="price">75$</td>
+<td><button class="details-btn">إظهار التفاصيل</button></td>
+<td><button class="select-btn">اختيار</button></td>
+</tr>
+
+<tr class="details-row">
+<td colspan="6">
+<h3 class="details-title">مواصفات BMW 320i</h3>
+<table class="details-table">
+<tr><th>المواصفة</th><th>القيمة</th></tr>
+<tr><td>نوع الوقود</td><td>بنزين</td></tr>
+<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
+<tr><td>عدد المقاعد</td><td>5</td></tr>
+<tr><td>عداد الكيلومترات</td><td>28,000 كم</td></tr>
+<tr><td>اللون</td><td>أزرق</td></tr>
+</table>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<!-- نموذج الحجز -->
+
+<section class="booking-form" id="bookingForm">
+
+<h2>نموذج طلب استئجار سيارة</h2>
+
+<div class="selected-car" id="selectedCarText"></div>
+
+<form id="rentalForm" novalidate>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label for="fullName">الاسم الكامل</label>
+<input type="text" id="fullName" required>
+<small class="error-message" id="nameError"></small>
+</div>
+
+<div class="form-group">
+<label for="nationalId">الرقم الوطني (11 خانة)</label>
+<input type="text" id="nationalId"
+maxlength="11" inputmode="numeric" required>
+<small class="error-message" id="nationalIdError"></small>
+</div>
+
+<div class="form-group">
+<label for="startDate">تاريخ بداية التأجير</label>
+<input type="date" id="startDate" required>
+<small class="error-message" id="startDateError"></small>
+</div>
+
+<div class="form-group">
+<label for="endDate">تاريخ نهاية التأجير</label>
+<input type="date" id="endDate" required>
+<small class="error-message" id="endDateError"></small>
+</div>
+
+<div class="form-group">
+<label for="phone">رقم الموبايل MTN أو Syriatel</label>
+<input type="tel" id="phone" placeholder="09XXXXXXXX" required>
+<small class="error-message" id="phoneError"></small>
+</div>
+
+<div class="form-group">
+<label for="email">البريد الإلكتروني</label>
+<input type="email" id="email" required>
+<small class="error-message" id="emailError"></small>
+</div>
+
+</div>
+
+<button type="submit" class="submit-btn">إرسال الطلب</button>
+
+</form>
+</section>
+
+<!-- نافذة ملخص الحجز -->
+
+<div class="summary-overlay" id="summaryOverlay">
+<div class="summary-modal">
+
+<h2>تم التحقق من طلبك بنجاح</h2>
+
+<p class="summary-intro">
+ملخص تفاصيل طلب استئجار السيارة:
+</p>
+
+<table class="summary-table">
+<tr>
+<th>السيارة المختارة</th>
+<td id="summaryCar"></td>
+</tr>
+
+<tr>
+<th>السعر اليومي</th>
+<td id="summaryDailyPrice"></td>
+</tr>
+
+<tr>
+<th>عدد أيام التأجير</th>
+<td id="summaryDays"></td>
+</tr>
+
+<tr>
+<th>المبلغ قبل الحسم</th>
+<td id="summaryBeforeDiscount"></td>
+</tr>
+
+<tr>
+<th>قيمة الحسم</th>
+<td id="summaryDiscount"></td>
+</tr>
+</table>
+
+<div class="summary-total" id="summaryTotal"></div>
+
+<p class="discount-note" id="summaryDiscountNote"></p>
+
+<button type="button" class="close-summary-btn" id="closeSummary">
+إغلاق
+</button>
+
+</div>
+</div>
+
+<div class="footer">
+جميع الأسعار والمواصفات المعروضة تجريبية
+</div>
+
+</div>
+
+<script>
+
+$(document).ready(function () {
+
+    var selectedCar = null;
+
+    // إظهار وإخفاء التفاصيل
+
+    $(".details-btn").click(function () {
+
+        var button = $(this);
+
+        var details = button.closest("tr").next(".details-row");
+
+        details.stop(true, true).slideToggle(400, function () {
+
+            button.text(
+                details.is(":visible")
+                ? "إخفاء التفاصيل"
+                : "إظهار التفاصيل"
+            );
+
+        });
+
+    });
+
+
+    // اختيار السيارة وإظهار زر متابعة
+
+    $(".select-btn").click(function () {
+
+        var row = $(this).closest("tr");
+
+        var carName = row.find(".car-name").text().trim();
+
+        var carYear = row.children("td").eq(2).text().trim();
+
+        var priceText = row.children("td").eq(3).text().trim();
+
+        var dailyPrice = parseFloat(
+            priceText.replace(/[^0-9.]/g, "")
+        );
+
+        selectedCar = {
+            name: carName,
+            year: carYear,
+            priceText: priceText,
+            dailyPrice: dailyPrice
+        };
+
+        $(".continue-btn").remove();
+
+        $("#bookingForm").slideUp();
+
+        var continueButton = $(
+            '<button type="button" class="continue-btn">متابعة</button>'
+        );
+
+        $(this).after(continueButton);
+
+        continueButton.click(function () {
+
+            $("#selectedCarText").text(
+                "السيارة المختارة: " +
+                selectedCar.name +
+                " | سنة الصنع: " +
+                selectedCar.year +
+                " | السعر اليومي: " +
+                selectedCar.priceText
+            );
+
+            $("#bookingForm").slideDown();
+
+            $("html, body").animate({
+                scrollTop: $("#bookingForm").offset().top - 20
+            }, 500);
+
+        });
+
+    });
+
+
+    // التحقق من الرقم الوطني
+
+    $("#nationalId").on("input", function () {
+
+        this.value = this.value
+            .replace(/[^0-9]/g, "")
+            .slice(0, 11);
+
+    });
+
+
+    // تحديد تاريخ النهاية
+
+    $("#startDate").change(function () {
+
+        var startDate = $(this).val();
+
+        $("#endDate").attr("min", startDate);
+
+        if ($("#endDate").val() &&
+            $("#endDate").val() <= startDate) {
+
+            $("#endDate").val("");
+
+        }
+
+    });
+
+
+    // التحقق من البيانات وحساب التكلفة
+
+    $("#rentalForm").submit(function (event) {
+
+        event.preventDefault();
+
+        $(".error-message").text("");
+
+        var isValid = true;
+
+        var fullName = $("#fullName").val().trim();
+
+        var nationalId = $("#nationalId").val().trim();
+
+        var startDate = $("#startDate").val();
+
+        var endDate = $("#endDate").val();
+
+        var phone = $("#phone").val()
+            .trim()
+            .replace(/[\s()-]/g, "");
+
+        var email = $("#email").val().trim();
+
+
+        if (!selectedCar) {
+            alert("يرجى اختيار سيارة أولاً.");
+            return;
+        }
+
+
+        // الاسم الكامل
+
+        var namePattern =
+            /^[\p{L}]+(?:[ '\u2019-][\p{L}]+)+$/u;
+
+        if (!namePattern.test(fullName)) {
+
+            $("#nameError").text(
+                "أدخل الاسم الكامل بأحرف فقط واسمين على الأقل."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // الرقم الوطني
+
+        if (!/^[0-9]{11}$/.test(nationalId)) {
+
+            $("#nationalIdError").text(
+                "الرقم الوطني يجب أن يتكون من 11 رقماً."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // تاريخ البداية
+
+        if (!startDate) {
+
+            $("#startDateError").text(
+                "يرجى تحديد تاريخ بداية التأجير."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // تاريخ النهاية
+
+        if (!endDate) {
+
+            $("#endDateError").text(
+                "يرجى تحديد تاريخ نهاية التأجير."
+            );
+
+            isValid = false;
+
+        } else if (startDate && endDate <= startDate) {
+
+            $("#endDateError").text(
+                "يجب أن يكون تاريخ النهاية لاحقاً لتاريخ البداية."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // رقم الموبايل السوري
+
+        var localPhone = phone.replace(/^\+963/, "0");
+
+        if (!/^09[3489][0-9]{7}$/.test(localPhone)) {
+
+            $("#phoneError").text(
+                "أدخل رقماً صحيحاً تابعاً لـ MTN أو Syriatel."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // البريد الإلكتروني
+
+        var emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+
+            $("#emailError").text(
+                "يرجى إدخال بريد إلكتروني صحيح."
+            );
+
+            isValid = false;
+
+        }
+
+
+        // إذا نجح التحقق
+
+        if (isValid) {
+
+            var start = new Date(startDate + "T00:00:00");
+
+            var end = new Date(endDate + "T00:00:00");
+
+            // حساب عدد الأيام
+
+            var rentalDays = Math.round(
+                (end - start) / (1000 * 60 * 60 * 24)
+            );
+
+            // حساب المبلغ قبل الحسم
+
+            var subtotal =
+                rentalDays * selectedCar.dailyPrice;
+
+            // تطبيق حسم 10% إذا تجاوزت المدة 7 أيام
+
+            var discountRate =
+                rentalDays > 7 ? 0.10 : 0;
+
+            var discountAmount =
+                subtotal * discountRate;
+
+            var total =
+                subtotal - discountAmount;
+
+
+            // تنسيق المبالغ
+
+            function money(amount) {
+
+                return amount.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }) + " $";
+
+            }
+
+
+            // تعبئة نافذة الملخص
+
+            $("#summaryCar").text(
+                selectedCar.name + " - " + selectedCar.year
+            );
+
+            $("#summaryDailyPrice").text(
+                money(selectedCar.dailyPrice)
+            );
+
+            $("#summaryDays").text(
+                rentalDays + " يوم"
+            );
+
+            $("#summaryBeforeDiscount").text(
+                money(subtotal)
+            );
+
+            $("#summaryDiscount").text(
+                discountRate > 0
+                ? "10% - " + money(discountAmount)
+                : "لا يوجد حسم"
+            );
+
+            $("#summaryTotal").text(
+                "المبلغ الإجمالي: " + money(total)
+            );
+
+
+            if (discountRate > 0) {
+
+                $("#summaryDiscountNote").text(
+                    "تم تطبيق حسم 10% لأن مدة التأجير تجاوزت 7 أيام."
+                );
+
+            } else {
+
+                $("#summaryDiscountNote").text(
+                    "لا يوجد حسم لأن مدة التأجير 7 أيام أو أقل."
+                );
+
+            }
+
+
+            // إظهار نافذة الملخص
+
+            $("#summaryOverlay")
+                .css("display", "flex")
+                .hide()
+                .fadeIn(250);
+
+        }
+
+    });
+
+
+    // إغلاق نافذة الملخص
+
+    $("#closeSummary").click(function () {
+
+        $("#summaryOverlay").fadeOut(200);
+
+    });
+
+
+    // الإغلاق عند الضغط خارج النافذة
+
+    $("#summaryOverlay").click(function (event) {
+
+        if (event.target === this) {
+
+            $(this).fadeOut(200);
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
