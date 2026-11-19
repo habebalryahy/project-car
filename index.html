@@ -1,278 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتب التميز لتأجير السيارات</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-            --navy: #10243a;
-            --blue: #1769aa;
-            --gold: #f5b544;
-            --muted: #64748b;
-            --light: #f4f7fb;
-        }
 
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Tahoma, Arial, sans-serif;
-            color: var(--navy);
-            background: var(--light);
-        }
-        .rental-home {
-            width: min(1160px, 92%);
-            margin: 0 auto;
-            padding: 24px 0 30px;
-        }
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 14px 22px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 28px rgba(16,36,58,.07);
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--navy);
-            font-size: 20px;
-            font-weight: 800;
-        }
-        .brand-mark {
-            display: grid;
-            place-items: center;
-            width: 45px;
-            height: 45px;
-            color: var(--navy);
-            background: #fff2d8;
-            border-radius: 13px;
-            font-size: 25px;
-        }
-        .home-page-links {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .home-page-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 16px;
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 10px;
-            transition: .2s ease;
-        }
-        .home-page-link:hover {
-            color: var(--blue);
-            background: #edf5fc;
-            transform: translateY(-2px);
-        }
-        .home-link-icon { font-size: 18px; }
-        .hero {
-            position: relative;
-            display: flex;
-            align-items: center;
-            min-height: 390px;
-            margin-top: 24px;
-            padding: 55px;
-            overflow: hidden;
-            color: white;
-            border-radius: 24px;
-            background:
-                linear-gradient(90deg, rgba(8,25,43,.93) 0%, rgba(8,25,43,.78) 48%, rgba(8,25,43,.18) 100%),
-                url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85") center/cover;
-        }
-        .hero-content { max-width: 570px; position: relative; z-index: 1; }
-        .eyebrow {
-            display: inline-block;
-            margin-bottom: 15px;
-            padding: 8px 13px;
-            color: #ffe0a0;
-            background: rgba(245,181,68,.17);
-            border: 1px solid rgba(245,181,68,.4);
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-        .hero h1 {
-            margin: 0 0 16px;
-            color: white;
-            font-size: clamp(30px, 5vw, 48px);
-            line-height: 1.35;
-        }
-        .hero p {
-            margin: 0 0 25px;
-            color: #e2eaf2;
-            font-size: 17px;
-            line-height: 1.9;
-        }
-        .hero-button {
-            display: inline-block;
-            padding: 14px 25px;
-            color: #17283a;
-            background: var(--gold);
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 800;
-            transition: .2s ease;
-        }
-        .hero-button:hover {
-            background: #ffd078;
-            transform: translateY(-2px);
-        }
-        .section-heading {
-            margin: 38px 0 18px;
-            text-align: center;
-        }
-        .section-heading h2 {
-            margin: 0 0 8px;
-            font-size: 27px;
-        }
-        .section-heading p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-        .benefit {
-            padding: 24px 20px;
-            text-align: center;
-            background: white;
-            border: 1px solid #e8edf3;
-            border-radius: 16px;
-            box-shadow: 0 7px 22px rgba(16,36,58,.04);
-        }
-        .benefit-icon {
-            display: grid;
-            place-items: center;
-            width: 52px;
-            height: 52px;
-            margin: 0 auto 13px;
-            background: #edf5fc;
-            border-radius: 15px;
-            font-size: 25px;
-        }
-        .benefit h3 { margin: 0 0 9px; font-size: 18px; }
-        .benefit p { margin: 0; color: var(--muted); line-height: 1.8; font-size: 14px; }
-        .bottom-cta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 24px;
-            padding: 25px 30px;
-            color: white;
-            background: var(--navy);
-            border-radius: 17px;
-        }
-        .bottom-cta h2 { margin: 0 0 7px; color: white; font-size: 21px; }
-        .bottom-cta p { margin: 0; color: #cbd5e1; line-height: 1.7; }
-        .bottom-cta a {
-            flex-shrink: 0;
-            padding: 12px 20px;
-            color: var(--navy);
-            background: var(--gold);
-            border-radius: 9px;
-            text-decoration: none;
-            font-weight: 800;
-        }
-        footer {
-            padding: 25px 10px 5px;
-            color: var(--muted);
-            text-align: center;
-            font-size: 13px;
-            line-height: 1.8;
-        }
-        @media (max-width: 720px) {
-            .topbar { align-items: flex-start; flex-direction: column; }
-            .hero { min-height: 350px; padding: 30px 24px; background-position: 58% center; }
-            .benefits { grid-template-columns: 1fr; }
-            .bottom-cta { align-items: flex-start; flex-direction: column; }
-        }
-    </style>
+    <title>مكتب التميز لتأجير السيارات</title>
+
+    <!-- ربط ملف CSS الخارجي -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
+
     <main class="rental-home">
+
+        <!-- الشريط العلوي -->
         <header class="topbar">
+
             <div class="brand">
                 <span class="brand-mark" aria-hidden="true">🚘</span>
                 <span>مكتب التميز لتأجير السيارات</span>
             </div>
 
             <nav class="home-page-links" aria-label="روابط الموقع">
+
                 <a class="home-page-link about-link" href="AboutUs.html">
                     <span class="home-link-icon" aria-hidden="true">ℹ️</span>
                     <span>من نحن</span>
                 </a>
+
                 <a class="home-page-link cars-link" href="Cars.html">
                     <span class="home-link-icon" aria-hidden="true">🚗</span>
                     <span>السيارات والحجز</span>
                 </a>
+
             </nav>
+
         </header>
 
+
+        <!-- القسم الرئيسي -->
         <section class="hero">
+
             <div class="hero-content">
+
                 <span class="eyebrow">رحلتك تبدأ من هنا</span>
+
                 <h1>استأجر سيارتك المثالية وانطلق بثقة</h1>
+
                 <p>
                     نوفر لك خيارات متنوعة من السيارات لتناسب احتياجاتك،
                     مع تجربة حجز سهلة وخدمة موثوقة وأسعار مناسبة.
                 </p>
-                <a class="hero-button" href="Cars.html">استعرض السيارات واحجز الآن ←</a>
+
+                <a class="hero-button" href="Cars.html">
+                    استعرض السيارات واحجز الآن ←
+                </a>
+
             </div>
+
         </section>
 
+
+        <!-- قسم المميزات -->
         <section aria-labelledby="benefits-title">
+
             <div class="section-heading">
-                <h2 id="benefits-title">لماذا تختار مكتب التميز؟</h2>
-                <p>نهتم بتوفير تجربة تأجير مريحة وواضحة من بداية الحجز حتى نهاية رحلتك.</p>
+
+                <h2 id="benefits-title">
+                    لماذا تختار مكتب التميز؟
+                </h2>
+
+                <p>
+                    نهتم بتوفير تجربة تأجير مريحة وواضحة من بداية الحجز حتى نهاية رحلتك.
+                </p>
+
             </div>
+
 
             <div class="benefits">
+
+                <!-- الميزة الأولى -->
                 <article class="benefit">
-                    <div class="benefit-icon" aria-hidden="true">🚙</div>
+
+                    <div class="benefit-icon" aria-hidden="true">
+                        🚙
+                    </div>
+
                     <h3>خيارات متنوعة</h3>
-                    <p>مجموعة من السيارات لتختار ما يناسب رحلاتك واحتياجاتك اليومية.</p>
+
+                    <p>
+                        مجموعة من السيارات لتختار ما يناسب رحلاتك واحتياجاتك اليومية.
+                    </p>
+
                 </article>
+
+
+                <!-- الميزة الثانية -->
                 <article class="benefit">
-                    <div class="benefit-icon" aria-hidden="true">📅</div>
+
+                    <div class="benefit-icon" aria-hidden="true">
+                        📅
+                    </div>
+
                     <h3>حجز سهل وسريع</h3>
-                    <p>تصفح السيارات واختر مدة التأجير المناسبة لك من خلال صفحة الحجز.</p>
+
+                    <p>
+                        تصفح السيارات واختر مدة التأجير المناسبة لك من خلال صفحة الحجز.
+                    </p>
+
                 </article>
+
+
+                <!-- الميزة الثالثة -->
                 <article class="benefit">
-                    <div class="benefit-icon" aria-hidden="true">⭐</div>
+
+                    <div class="benefit-icon" aria-hidden="true">
+                        ⭐
+                    </div>
+
                     <h3>خدمة تهتم بك</h3>
-                    <p>نسعى إلى جعل تجربة استئجار السيارة واضحة ومريحة في كل خطوة.</p>
+
+                    <p>
+                        نسعى إلى جعل تجربة استئجار السيارة واضحة ومريحة في كل خطوة.
+                    </p>
+
                 </article>
+
             </div>
+
         </section>
 
+
+        <!-- قسم الحجز -->
         <section class="bottom-cta">
+
             <div>
+
                 <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
-                <p>تصفح السيارات المتاحة واختر السيارة التي تناسبك.</p>
+
+                <p>
+                    تصفح السيارات المتاحة واختر السيارة التي تناسبك.
+                </p>
+
             </div>
-            <a href="Cars.html">ابدأ الحجز الآن</a>
+
+            <a href="Cars.html">
+                ابدأ الحجز الآن
+            </a>
+
         </section>
 
+
+        <!-- تذييل الصفحة -->
         <footer>
             مكتب التميز لتأجير السيارات © 2026
         </footer>
+
     </main>
+
 </body>
+
 </html>
