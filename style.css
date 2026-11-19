@@ -1,237 +1,237 @@
 /* Shared stylesheet for AboutUs.html, Cars.html and home.html */
-/* Each page is scoped by its body class to prevent selector conflicts. */
 
 /* ===== AboutUs.html ===== */
 
 body.about-page * {
-margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body.about-page body {
-font-family: Tahoma, Arial, sans-serif;
-            background: #f4f6f9;
-            color: #333;
-            line-height: 1.8;
+body.about-page {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.8;
 }
 
 body.about-page header {
-background: #142b45;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+    background: #142b45;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 body.about-page header h1 {
-color: #f5b942;
+    color: #f5b942;
 }
 
 body.about-page nav a {
-color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 15px;
 }
 
 body.about-page nav a:hover {
-color: #f5b942;
+    color: #f5b942;
 }
 
 body.about-page .hero {
-background: linear-gradient(
-                rgba(10, 30, 50, 0.8),
-                rgba(10, 30, 50, 0.8)
-            ), url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 110px 20px;
+    background: linear-gradient(
+        rgba(10, 30, 50, 0.8),
+        rgba(10, 30, 50, 0.8)
+    ), url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
 }
 
 body.about-page .hero h2 {
-font-size: 38px;
-            margin-bottom: 15px;
-            color: #f5b942;
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #f5b942;
 }
 
 body.about-page .hero p {
-font-size: 19px;
-            margin-bottom: 25px;
+    font-size: 19px;
+    margin-bottom: 25px;
 }
 
 body.about-page .section {
-padding: 55px 8%;
+    padding: 55px 8%;
 }
 
 body.about-page .section-title {
-text-align: center;
-            color: #142b45;
-            margin-bottom: 35px;
-            font-size: 28px;
+    text-align: center;
+    color: #142b45;
+    margin-bottom: 35px;
+    font-size: 28px;
 }
 
 body.about-page .about {
-text-align: center;
-            max-width: 850px;
-            margin: auto;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
 }
 
 body.about-page .cards {
-display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
 }
 
 body.about-page .card {
-background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            transition: 0.3s;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 body.about-page .card:hover {
-transform: translateY(-6px);
+    transform: translateY(-6px);
 }
 
 body.about-page .card h3 {
-color: #142b45;
-            margin-bottom: 12px;
+    color: #142b45;
+    margin-bottom: 12px;
 }
 
 body.about-page .icon {
-font-size: 38px;
-            margin-bottom: 10px;
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
 body.about-page .branches {
-background: #e9eef4;
+    background: #e9eef4;
 }
 
 body.about-page .contact {
-background: #142b45;
-            color: white;
+    background: #142b45;
+    color: white;
 }
 
 body.about-page .contact .section-title {
-color: #f5b942;
+    color: #f5b942;
 }
 
 body.about-page .contact .card {
-color: #333;
+    color: #333;
 }
 
 body.about-page .contact a {
-color: #142b45;
-            text-decoration: none;
+    color: #142b45;
+    text-decoration: none;
 }
 
 body.about-page footer {
-background: #0b1c2d;
-            color: white;
-            text-align: center;
-            padding: 20px;
+    background: #0b1c2d;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 @media (max-width: 700px) {
-body.about-page header {
-justify-content: center;
-                text-align: center;
-                gap: 12px;
+    body.about-page header {
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    body.about-page nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    body.about-page .hero h2 {
+        font-size: 27px;
+    }
 }
 
-body.about-page nav a {
-display: inline-block;
-                margin: 5px;
-}
-
-body.about-page .hero h2 {
-font-size: 27px;
-}
-}
 
 /* ===== Cars.html ===== */
 
 body.cars-page * {
-box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body.cars-page body {
-font-family: Arial, sans-serif;
+body.cars-page {
+    font-family: Arial, sans-serif;
     background: #f1f4f8;
     padding: 30px 15px;
     color: #263445;
 }
 
 body.cars-page .container {
-max-width: 1150px;
+    max-width: 1150px;
     margin: auto;
 }
 
 body.cars-page h1 {
-text-align: center;
+    text-align: center;
     color: #17365d;
     margin-bottom: 10px;
 }
 
 body.cars-page .description {
-text-align: center;
+    text-align: center;
     margin-bottom: 25px;
     color: #667085;
 }
 
 body.cars-page .table-wrapper {
-overflow-x: auto;
+    overflow-x: auto;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px #00000012;
 }
 
 body.cars-page table {
-width: 100%;
+    width: 100%;
     border-collapse: collapse;
     min-width: 850px;
 }
 
 body.cars-page th {
-background: #17365d;
+    background: #17365d;
     color: white;
     padding: 15px 10px;
 }
 
 body.cars-page td {
-text-align: center;
+    text-align: center;
     padding: 12px 10px;
     border-bottom: 1px solid #e5e7eb;
 }
 
 body.cars-page .car-image {
-width: 120px;
+    width: 120px;
     height: 75px;
     object-fit: cover;
     border-radius: 8px;
 }
 
 body.cars-page .car-name {
-font-weight: bold;
+    font-weight: bold;
     color: #17365d;
 }
 
 body.cars-page .price {
-color: #198754;
+    color: #198754;
     font-weight: bold;
 }
 
 body.cars-page button {
-border: none;
+    border: none;
     padding: 9px 13px;
     border-radius: 6px;
     cursor: pointer;
@@ -241,33 +241,33 @@ border: none;
 }
 
 body.cars-page .details-btn {
-background: #0d6efd;
+    background: #0d6efd;
 }
 
 body.cars-page .select-btn {
-background: #198754;
+    background: #198754;
 }
 
 body.cars-page .continue-btn {
-background: #17365d;
+    background: #17365d;
     padding: 10px 20px;
 }
 
 body.cars-page button:hover {
-opacity: 0.85;
+    opacity: 0.85;
 }
 
 body.cars-page .details-row {
-display: none;
+    display: none;
     background: #f8fafc;
 }
 
 body.cars-page .details-row td {
-padding: 18px;
+    padding: 18px;
 }
 
 body.cars-page .details-table {
-width: 75%;
+    width: 75%;
     min-width: 350px;
     margin: auto;
     border: 1px solid #dce3ec;
@@ -275,23 +275,23 @@ width: 75%;
 }
 
 body.cars-page .details-table th {
-background: #e7eef7;
+    background: #e7eef7;
     color: #17365d;
 }
 
 body.cars-page .details-table td {
-padding: 10px;
+    padding: 10px;
 }
 
 body.cars-page .details-title {
-margin-bottom: 12px;
+    margin-bottom: 12px;
     color: #17365d;
 }
 
-body.cars-page /* نموذج الحجز */
+/* نموذج الحجز */
 
-.booking-form {
-display: none;
+body.cars-page .booking-form {
+    display: none;
     margin-top: 25px;
     padding: 25px;
     background: white;
@@ -300,13 +300,13 @@ display: none;
 }
 
 body.cars-page .booking-form h2 {
-color: #17365d;
+    color: #17365d;
     margin-bottom: 20px;
     text-align: center;
 }
 
 body.cars-page .selected-car {
-background: #eaf2ff;
+    background: #eaf2ff;
     color: #17365d;
     border-radius: 8px;
     padding: 12px;
@@ -315,23 +315,23 @@ background: #eaf2ff;
 }
 
 body.cars-page .form-grid {
-display: grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
 body.cars-page .form-group {
-display: flex;
+    display: flex;
     flex-direction: column;
     gap: 7px;
 }
 
 body.cars-page .form-group label {
-font-weight: bold;
+    font-weight: bold;
 }
 
 body.cars-page .form-group input {
-width: 100%;
+    width: 100%;
     padding: 11px;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
@@ -339,22 +339,22 @@ width: 100%;
 }
 
 body.cars-page .error-message {
-color: #dc3545;
+    color: #dc3545;
     font-size: 13px;
     min-height: 16px;
 }
 
 body.cars-page .submit-btn {
-background: #198754;
+    background: #198754;
     padding: 11px 25px;
     font-size: 15px;
     margin-top: 20px;
 }
 
-body.cars-page /* نافذة ملخص الحجز */
+/* نافذة ملخص الحجز */
 
-.summary-overlay {
-display: none;
+body.cars-page .summary-overlay {
+    display: none;
     position: fixed;
     inset: 0;
     background: rgba(15, 23, 42, 0.65);
@@ -365,7 +365,7 @@ display: none;
 }
 
 body.cars-page .summary-modal {
-width: 100%;
+    width: 100%;
     max-width: 520px;
     background: white;
     border-radius: 14px;
@@ -374,13 +374,13 @@ width: 100%;
 }
 
 body.cars-page .summary-modal h2 {
-color: #198754;
+    color: #198754;
     text-align: center;
     margin-bottom: 18px;
 }
 
 body.cars-page .summary-table {
-width: 100%;
+    width: 100%;
     min-width: 0;
     margin: 15px 0;
     border-collapse: collapse;
@@ -388,19 +388,19 @@ width: 100%;
 
 body.cars-page .summary-table th,
 body.cars-page .summary-table td {
-padding: 11px;
+    padding: 11px;
     border: 1px solid #e2e8f0;
     text-align: right;
 }
 
 body.cars-page .summary-table th {
-width: 42%;
+    width: 42%;
     background: #edf3fa;
     color: #17365d;
 }
 
 body.cars-page .summary-total {
-color: #198754;
+    color: #198754;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -408,13 +408,13 @@ color: #198754;
 }
 
 body.cars-page .discount-note {
-color: #198754;
+    color: #198754;
     text-align: center;
     font-size: 14px;
 }
 
 body.cars-page .close-summary-btn {
-display: block;
+    display: block;
     background: #17365d;
     padding: 11px 25px;
     margin: 18px auto 0;
@@ -422,221 +422,288 @@ display: block;
 }
 
 body.cars-page .footer {
-text-align: center;
+    text-align: center;
     margin-top: 25px;
     color: #777;
 }
 
-@media (max-width: 600px) {
-body.cars-page .form-grid {
-grid-template-columns: 1fr;
-}
-
-body.cars-page .booking-form {
-padding: 17px;
-}
-
-body.cars-page .car-image {
-width: 90px;
-        height: 60px;
-}
-}
-
-/* ===== home.html ===== */
-
-body.students-page * {
-margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-}
-
-body.students-page body {
-font-family: Arial, sans-serif;
-            background-color: #f1f5f9;
-            padding: 30px 15px;
-            color: #1e293b;
-}
-
-body.students-page .container {
-max-width: 1100px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-body.students-page h1 {
-text-align: center;
-            color: #1d4ed8;
-            margin-bottom: 10px;
-}
-
-body.students-page .description {
-text-align: center;
-            color: #64748b;
-            margin-bottom: 25px;
-}
-
-body.students-page table {
-width: 100%;
-            border-collapse: collapse;
-}
-
-body.students-page th {
-background-color: #1d4ed8;
-            color: white;
-            padding: 15px;
-}
-
-body.students-page td {
-padding: 14px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-}
-
-body.students-page tr:hover td {
-background-color: #eff6ff;
-}
-
-body.students-page .id {
-color: #1d4ed8;
-            font-weight: bold;
-}
-
-body.students-page .note {
-color: #475569;
-            font-size: 14px;
-}
-
-body.students-page .link {
-display: block;
-            width: fit-content;
-            margin: 25px auto 0;
-            padding: 12px 25px;
-            background-color: #1d4ed8;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-            transition: 0.3s;
-}
-
-body.students-page .link:hover {
-background-color: #1e40af;
-}
-
-body.students-page footer {
-text-align: center;
-            margin-top: 25px;
-            color: #64748b;
-            font-size: 13px;
-}
-
-@media (max-width: 600px) {
-body.students-page .container {
-padding: 15px;
-                overflow-x: auto;
-}
-
-body.students-page table {
-min-width: 750px;
-}
-}
-
-/* Moved from the inline style in Cars.html */
 body.cars-page .summary-intro {
     text-align: center;
 }
 
-
-
-/* Navigation cards added to home.html */
-body.students-page .home-page-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin: 0 auto 28px;
-}
-
-body.students-page .home-page-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-height: 92px;
-    padding: 18px 20px;
-    color: #1e293b;
-    text-decoration: none;
-    background: #ffffff;
-    border: 1px solid #dbe5f2;
-    border-right: 5px solid #1d4ed8;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-body.students-page .home-page-link:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
-    border-color: #93c5fd;
-}
-
-body.students-page .cars-link {
-    border-right-color: #198754;
-}
-
-body.students-page .home-link-icon {
-    display: grid;
-    place-items: center;
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    font-size: 25px;
-    background: #eff6ff;
-    border-radius: 10px;
-}
-
-body.students-page .cars-link .home-link-icon {
-    background: #ecfdf5;
-}
-
-body.students-page .home-link-text {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 4px;
-}
-
-body.students-page .home-link-text strong {
-    color: #17365d;
-    font-size: 17px;
-}
-
-body.students-page .home-link-text small {
-    color: #64748b;
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-body.students-page .home-link-arrow {
-    color: #1d4ed8;
-    font-size: 22px;
-    transition: transform 0.2s ease;
-}
-
-body.students-page .cars-link .home-link-arrow {
-    color: #198754;
-}
-
-body.students-page .home-page-link:hover .home-link-arrow {
-    transform: translateX(-4px);
-}
-
-@media (max-width: 700px) {
-    body.students-page .home-page-links {
+@media (max-width: 600px) {
+    body.cars-page .form-grid {
         grid-template-columns: 1fr;
     }
 
-    body.students-page .home-page-link {
-        padding: 15px;
+    body.cars-page .booking-form {
+        padding: 17px;
+    }
+
+    body.cars-page .car-image {
+        width: 90px;
+        height: 60px;
     }
 }
+
+
+/* ===== home.html - مكتب التميز لتأجير السيارات ===== */
+
+body.home-page * {
+    box-sizing: border-box;
+}
+
+body.home-page {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #10243a;
+    background: #f4f7fb;
+}
+
+body.home-page .rental-home {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+    padding: 24px 0 30px;
+}
+
+body.home-page .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 22px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(16,36,58,.07);
+}
+
+body.home-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #10243a;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+body.home-page .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    color: #10243a;
+    background: #fff2d8;
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+body.home-page .home-page-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+body.home-page .home-page-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    color: #10243a;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+body.home-page .home-page-link:hover {
+    color: #1769aa;
+    background: #edf5fc;
+    transform: translateY(-2px);
+}
+
+body.home-page .home-link-icon {
+    font-size: 18px;
+}
+
+body.home-page .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 390px;
+    margin-top: 24px;
+    padding: 55px;
+    overflow: hidden;
+    color: white;
+    border-radius: 24px;
+    background:
+        linear-gradient(90deg, rgba(8,25,43,.93) 0%, rgba(8,25,43,.78) 48%, rgba(8,25,43,.18) 100%),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+
+body.home-page .hero-content {
+    max-width: 570px;
+    position: relative;
+    z-index: 1;
+}
+
+body.home-page .eyebrow {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 13px;
+    color: #ffe0a0;
+    background: rgba(245,181,68,.17);
+    border: 1px solid rgba(245,181,68,.4);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+body.home-page .hero h1 {
+    margin: 0 0 16px;
+    color: white;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.35;
+}
+
+body.home-page .hero p {
+    margin: 0 0 25px;
+    color: #e2eaf2;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+body.home-page .hero-button {
+    display: inline-block;
+    padding: 14px 25px;
+    color: #17283a;
+    background: #f5b544;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: .2s ease;
+}
+
+body.home-page .hero-button:hover {
+    background: #ffd078;
+    transform: translateY(-2px);
+}
+
+body.home-page .section-heading {
+    margin: 38px 0 18px;
+    text-align: center;
+}
+
+body.home-page .section-heading h2 {
+    margin: 0 0 8px;
+    font-size: 27px;
+}
+
+body.home-page .section-heading p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+body.home-page .benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+body.home-page .benefit {
+    padding: 24px 20px;
+    text-align: center;
+    background: white;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    box-shadow: 0 7px 22px rgba(16,36,58,.04);
+}
+
+body.home-page .benefit-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 13px;
+    background: #edf5fc;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+body.home-page .benefit h3 {
+    margin: 0 0 9px;
+    font-size: 18px;
+}
+
+body.home-page .benefit p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+body.home-page .bottom-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 25px 30px;
+    color: white;
+    background: #10243a;
+    border-radius: 17px;
+}
+
+body.home-page .bottom-cta h2 {
+    margin: 0 0 7px;
+    color: white;
+    font-size: 21px;
+}
+
+body.home-page .bottom-cta p {
+    margin: 0;
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+body.home-page .bottom-cta a {
+    flex-shrink: 0;
+    padding: 12px 20px;
+    color: #10243a;
+    background: #f5b544;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+body.home-page footer {
+    padding: 25px 10px 5px;
+    color: #64748b;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+@media (max-width: 720px) {
+    body.home-page .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    body.home-page .hero {
+        min-height: 350px;
+        padding: 30px 24px;
+        background-position: 58% center;
+    }
+
+    body.home-page .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    body.home-page .bottom-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
