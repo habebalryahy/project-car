@@ -1,14 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="مكتب التميز لتأجير السيارات - خيارات متنوعة وتجربة حجز سهلة ومريحة.">
+    <meta name="theme-color" content="#102a43">
     <title>مكتب التميز لتأجير السيارات</title>
-
-    <!-- ربط ملف CSS الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,145 +14,73 @@
 
     <main class="rental-home">
 
-        <!-- الشريط العلوي -->
         <header class="topbar">
-
             <div class="brand">
                 <span class="brand-mark" aria-hidden="true">🚘</span>
                 <span>مكتب التميز لتأجير السيارات</span>
             </div>
 
             <nav class="home-page-links" aria-label="روابط الموقع">
-
                 <a class="home-page-link about-link" href="AboutUs.html">
                     <span class="home-link-icon" aria-hidden="true">ℹ️</span>
                     <span>من نحن</span>
                 </a>
-
                 <a class="home-page-link cars-link" href="Cars.html">
                     <span class="home-link-icon" aria-hidden="true">🚗</span>
                     <span>السيارات والحجز</span>
                 </a>
-
             </nav>
-
         </header>
 
-
-        <!-- القسم الرئيسي -->
-        <section class="hero">
-
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
-
                 <span class="eyebrow">رحلتك تبدأ من هنا</span>
-
-                <h1>استأجر سيارتك المثالية وانطلق بثقة</h1>
-
+                <h1 id="hero-title">استأجر سيارتك المثالية وانطلق بثقة</h1>
                 <p>
                     نوفر لك خيارات متنوعة من السيارات لتناسب احتياجاتك،
                     مع تجربة حجز سهلة وخدمة موثوقة وأسعار مناسبة.
                 </p>
-
                 <a class="hero-button" href="Cars.html">
-                    استعرض السيارات واحجز الآن ←
+                    استعرض السيارات واحجز الآن <span aria-hidden="true">←</span>
                 </a>
-
             </div>
-
         </section>
 
-
-        <!-- قسم المميزات -->
         <section aria-labelledby="benefits-title">
-
             <div class="section-heading">
-
-                <h2 id="benefits-title">
-                    لماذا تختار مكتب التميز؟
-                </h2>
-
-                <p>
-                    نهتم بتوفير تجربة تأجير مريحة وواضحة من بداية الحجز حتى نهاية رحلتك.
-                </p>
-
+                <h2 id="benefits-title">لماذا تختار مكتب التميز؟</h2>
+                <p>نهتم بتوفير تجربة تأجير مريحة وواضحة من بداية الحجز حتى نهاية رحلتك.</p>
             </div>
-
 
             <div class="benefits">
-
-                <!-- الميزة الأولى -->
                 <article class="benefit">
-
-                    <div class="benefit-icon" aria-hidden="true">
-                        🚙
-                    </div>
-
+                    <div class="benefit-icon" aria-hidden="true">🚙</div>
                     <h3>خيارات متنوعة</h3>
-
-                    <p>
-                        مجموعة من السيارات لتختار ما يناسب رحلاتك واحتياجاتك اليومية.
-                    </p>
-
+                    <p>مجموعة من السيارات لتختار ما يناسب رحلاتك واحتياجاتك اليومية.</p>
                 </article>
 
-
-                <!-- الميزة الثانية -->
                 <article class="benefit">
-
-                    <div class="benefit-icon" aria-hidden="true">
-                        📅
-                    </div>
-
+                    <div class="benefit-icon" aria-hidden="true">📅</div>
                     <h3>حجز سهل وسريع</h3>
-
-                    <p>
-                        تصفح السيارات واختر مدة التأجير المناسبة لك من خلال صفحة الحجز.
-                    </p>
-
+                    <p>تصفح السيارات واختر مدة التأجير المناسبة لك من خلال صفحة الحجز.</p>
                 </article>
 
-
-                <!-- الميزة الثالثة -->
                 <article class="benefit">
-
-                    <div class="benefit-icon" aria-hidden="true">
-                        ⭐
-                    </div>
-
+                    <div class="benefit-icon" aria-hidden="true">⭐</div>
                     <h3>خدمة تهتم بك</h3>
-
-                    <p>
-                        نسعى إلى جعل تجربة استئجار السيارة واضحة ومريحة في كل خطوة.
-                    </p>
-
+                    <p>نسعى إلى جعل تجربة استئجار السيارة واضحة ومريحة في كل خطوة.</p>
                 </article>
-
             </div>
-
         </section>
 
-
-        <!-- قسم الحجز -->
-        <section class="bottom-cta">
-
+        <section class="bottom-cta" aria-labelledby="cta-title">
             <div>
-
-                <h2>هل أنت مستعد لرحلتك القادمة؟</h2>
-
-                <p>
-                    تصفح السيارات المتاحة واختر السيارة التي تناسبك.
-                </p>
-
+                <h2 id="cta-title">هل أنت مستعد لرحلتك القادمة؟</h2>
+                <p>تصفح السيارات المتاحة واختر السيارة التي تناسبك.</p>
             </div>
-
-            <a href="Cars.html">
-                ابدأ الحجز الآن
-            </a>
-
+            <a href="Cars.html">ابدأ الحجز الآن</a>
         </section>
 
-
-        <!-- تذييل الصفحة -->
         <footer>
             مكتب التميز لتأجير السيارات © 2026
         </footer>
@@ -162,5 +88,4 @@
     </main>
 
 </body>
-
 </html>
