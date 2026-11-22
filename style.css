@@ -1,3 +1,4 @@
+
 /* =====================================================
    ملف التنسيقات المشترك للموقع
    AboutUs.html - Cars.html - home.html
@@ -36,36 +37,40 @@ button {
 
 /* =====================================================
    الصفحة الأولى: AboutUs.html
+   تصميم مطور واحترافي
 ===================================================== */
 
 body.about-page {
   margin: 0;
   font-family: Tahoma, Arial, sans-serif;
   background: #f4f6f9;
-  color: #333;
-  line-height: 1.8;
+  color: #344054;
+  line-height: 1.9;
+  overflow-x: hidden;
 }
 
-body.about-page * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* الرأس */
 
 body.about-page header {
-  background: #142b45;
-  color: white;
-  padding: 20px 8%;
+  position: relative;
+  z-index: 10;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 18px;
+  padding: 19px 8%;
+  background: linear-gradient(120deg, #0b1f33, #173b5c);
+  color: white;
+  box-shadow: 0 5px 22px rgba(9, 30, 50, 0.16);
 }
 
 body.about-page header h1 {
+  margin: 0;
   color: #f5b942;
   font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
 }
 
 body.about-page nav {
@@ -73,58 +78,136 @@ body.about-page nav {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
 }
 
 body.about-page nav a {
-  color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 9px 15px;
+  color: #f5f7fa;
   text-decoration: none;
-  margin: 0 8px;
-  font-size: 15px;
-  transition: 0.2s;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  transition: all 0.25s ease;
 }
 
 body.about-page nav a:hover {
-  color: #f5b942;
+  color: #ffd477;
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(245, 185, 66, 0.3);
+  transform: translateY(-2px);
 }
 
+/* الواجهة الرئيسية */
+
 body.about-page .hero {
-  background: linear-gradient(rgba(10, 30, 50, 0.8), rgba(10, 30, 50, 0.8)),
-    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  isolation: isolate;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 85px 20px;
+  overflow: hidden;
   color: white;
   text-align: center;
-  padding: 110px 20px;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(7, 25, 42, 0.91),
+      rgba(15, 48, 75, 0.76)
+    ),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600");
+  background-size: cover;
+  background-position: center 55%;
+}
+
+body.about-page .hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 350px;
+  height: 350px;
+  left: -130px;
+  bottom: -210px;
+  border: 2px solid rgba(245, 185, 66, 0.35);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px rgba(245, 185, 66, 0.06),
+    0 0 0 70px rgba(245, 185, 66, 0.04);
 }
 
 body.about-page .hero h2 {
-  font-size: 38px;
-  margin-bottom: 15px;
-  color: #f5b942;
+  max-width: 850px;
+  margin: 0 0 18px;
+  color: #ffd477;
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.5;
+  font-weight: 800;
 }
 
 body.about-page .hero p {
-  font-size: 19px;
-  margin-bottom: 25px;
+  max-width: 720px;
+  margin: 0 auto 15px;
+  color: #eef3f8;
+  font-size: 18px;
+  line-height: 2;
 }
 
+/* الأقسام العامة */
+
 body.about-page .section {
-  padding: 55px 8%;
+  padding: 70px 8%;
 }
 
 body.about-page .section-title {
-  text-align: center;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 42px;
+  padding-bottom: 15px;
   color: #142b45;
-  margin-bottom: 35px;
-  font-size: 28px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
 }
 
-body.about-page .about {
-  text-align: center;
-  max-width: 850px;
-  margin: auto;
+body.about-page .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 75px;
+  height: 4px;
+  background: #f5b942;
+  border-radius: 10px;
 }
+
+/* قسم التعريف بالشركة */
+
+body.about-page .about {
+  max-width: 950px;
+  margin: auto;
+  padding: 36px 40px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(16, 42, 67, 0.07);
+}
+
+body.about-page .about p {
+  color: #586879;
+  font-size: 16px;
+  line-height: 2.1;
+}
+
+/* البطاقات */
 
 body.about-page .cards {
   display: grid;
@@ -133,57 +216,139 @@ body.about-page .cards {
 }
 
 body.about-page .card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  position: relative;
   min-width: 0;
+  padding: 32px 25px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 17px;
+  text-align: center;
+  box-shadow: 0 7px 24px rgba(16, 42, 67, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.about-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f5b942, #d99b24);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 body.about-page .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 17px 35px rgba(16, 42, 67, 0.12);
+}
+
+body.about-page .card:hover::before {
+  transform: scaleX(1);
 }
 
 body.about-page .card h3 {
+  margin: 0 0 13px;
   color: #142b45;
-  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+body.about-page .card p {
+  margin: 0;
+  color: #667789;
+  font-size: 14px;
+  line-height: 2;
 }
 
 body.about-page .icon {
-  font-size: 38px;
-  margin-bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  color: #142b45;
+  background: #fff4d9;
+  border: 1px solid #f5e2b5;
+  border-radius: 20px;
+  font-size: 36px;
+  transition: transform 0.3s ease;
 }
+
+body.about-page .card:hover .icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* قسم الفروع */
 
 body.about-page .branches {
-  background: #e9eef4;
+  background: linear-gradient(135deg, #eaf0f6, #f4f6f9);
 }
 
+body.about-page .branches .card {
+  background: #fff;
+  border-color: #e1e8f0;
+}
+
+body.about-page .branches .card h3 {
+  color: #173b5c;
+}
+
+/* قسم التواصل */
+
 body.about-page .contact {
-  background: #142b45;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #0b1f33, #173b5c);
   color: white;
 }
 
 body.about-page .contact .section-title {
-  color: #f5b942;
+  color: #ffd477;
 }
 
 body.about-page .contact .card {
-  color: #333;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+body.about-page .contact .card h3 {
+  color: #142b45;
+}
+
+body.about-page .contact .card p {
+  color: #657487;
 }
 
 body.about-page .contact a {
-  color: #142b45;
+  color: #173b5c;
   text-decoration: none;
+  font-weight: 700;
   overflow-wrap: anywhere;
+  transition: color 0.2s ease;
 }
 
+body.about-page .contact a:hover {
+  color: #c28a1d;
+  text-decoration: underline;
+}
+
+/* التذييل */
+
 body.about-page footer {
-  background: #0b1c2d;
-  color: white;
+  padding: 24px 15px;
+  background: #081827;
+  color: #d5dee7;
   text-align: center;
-  padding: 20px;
+  font-size: 14px;
+}
+
+body.about-page footer p {
+  margin: 0;
 }
 
 /* =====================================================
@@ -792,11 +957,15 @@ body.home-page footer {
   }
 
   body.about-page .section {
-    padding: 45px 5%;
+    padding: 55px 5%;
   }
 
   body.about-page .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.about-page .hero {
+    min-height: 380px;
   }
 
   /* صفحة السيارات */
@@ -855,13 +1024,15 @@ body.home-page footer {
 
   body.about-page nav a {
     display: inline-block;
-    margin: 3px;
-    padding: 7px 9px;
+    margin: 2px;
+    padding: 8px 10px;
     font-size: 13px;
   }
 
   body.about-page .hero {
-    padding: 70px 17px;
+    min-height: 330px;
+    padding: 65px 17px;
+    background-position: center;
   }
 
   body.about-page .hero h2 {
@@ -873,25 +1044,38 @@ body.home-page footer {
   }
 
   body.about-page .section {
-    padding: 35px 16px;
+    padding: 45px 16px;
   }
 
   body.about-page .section-title {
-    font-size: 23px;
-    margin-bottom: 22px;
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  body.about-page .about {
+    padding: 25px 18px;
+    border-radius: 15px;
+  }
+
+  body.about-page .about p {
+    font-size: 14px;
   }
 
   body.about-page .cards {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 17px;
   }
 
   body.about-page .card {
-    padding: 20px;
+    padding: 25px 20px;
+  }
+
+  body.about-page .card h3 {
+    font-size: 19px;
   }
 
   body.about-page footer {
-    padding: 18px 12px;
+    padding: 19px 12px;
     font-size: 13px;
   }
 
@@ -1113,6 +1297,10 @@ body.home-page footer {
 
   body.about-page .section-title {
     font-size: 21px;
+  }
+
+  body.about-page .about {
+    padding: 20px 13px;
   }
 
   body.cars-page {
