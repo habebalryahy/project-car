@@ -1,763 +1,1195 @@
-/* Shared stylesheet for AboutUs.html, Cars.html and home.html */
+/* =====================================================
+   ملف التنسيقات المشترك للموقع
+   AboutUs.html - Cars.html - home.html
+   تصميم متجاوب مع الكمبيوتر والتابلت والموبايل
+===================================================== */
 
-/* ===== AboutUs.html ===== */
+/* ================== إعدادات عامة ================== */
 
-body.about-page * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   الصفحة الأولى: AboutUs.html
+===================================================== */
+
 body.about-page {
-    font-family: Tahoma, Arial, sans-serif;
-    background: #f4f6f9;
-    color: #333;
-    line-height: 1.8;
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.8;
+}
+
+body.about-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body.about-page header {
-    background: #142b45;
-    color: white;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  background: #142b45;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 body.about-page header h1 {
-    color: #f5b942;
+  color: #f5b942;
+  font-size: 27px;
+}
+
+body.about-page nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 body.about-page nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 15px;
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
 body.about-page nav a:hover {
-    color: #f5b942;
+  color: #f5b942;
 }
 
 body.about-page .hero {
-    background: linear-gradient(
-        rgba(10, 30, 50, 0.8),
-        rgba(10, 30, 50, 0.8)
-    ), url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 110px 20px;
+  background: linear-gradient(rgba(10, 30, 50, 0.8), rgba(10, 30, 50, 0.8)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 110px 20px;
 }
 
 body.about-page .hero h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
-    color: #f5b942;
+  font-size: 38px;
+  margin-bottom: 15px;
+  color: #f5b942;
 }
 
 body.about-page .hero p {
-    font-size: 19px;
-    margin-bottom: 25px;
+  font-size: 19px;
+  margin-bottom: 25px;
 }
 
 body.about-page .section {
-    padding: 55px 8%;
+  padding: 55px 8%;
 }
 
 body.about-page .section-title {
-    text-align: center;
-    color: #142b45;
-    margin-bottom: 35px;
-    font-size: 28px;
+  text-align: center;
+  color: #142b45;
+  margin-bottom: 35px;
+  font-size: 28px;
 }
 
 body.about-page .about {
-    text-align: center;
-    max-width: 850px;
-    margin: auto;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
 }
 
 body.about-page .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
 }
 
 body.about-page .card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  min-width: 0;
 }
 
 body.about-page .card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-6px);
 }
 
 body.about-page .card h3 {
-    color: #142b45;
-    margin-bottom: 12px;
+  color: #142b45;
+  margin-bottom: 12px;
 }
 
 body.about-page .icon {
-    font-size: 38px;
-    margin-bottom: 10px;
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 
 body.about-page .branches {
-    background: #e9eef4;
+  background: #e9eef4;
 }
 
 body.about-page .contact {
-    background: #142b45;
-    color: white;
+  background: #142b45;
+  color: white;
 }
 
 body.about-page .contact .section-title {
-    color: #f5b942;
+  color: #f5b942;
 }
 
 body.about-page .contact .card {
-    color: #333;
+  color: #333;
 }
 
 body.about-page .contact a {
-    color: #142b45;
-    text-decoration: none;
+  color: #142b45;
+  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 body.about-page footer {
-    background: #0b1c2d;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background: #0b1c2d;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-@media (max-width: 700px) {
-    body.about-page header {
-        justify-content: center;
-        text-align: center;
-        gap: 12px;
-    }
-
-    body.about-page nav a {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    body.about-page .hero h2 {
-        font-size: 27px;
-    }
-}
-
-
-/* ===== Cars.html ===== */
-
-body.cars-page * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* =====================================================
+   الصفحة الثانية: Cars.html
+===================================================== */
 
 body.cars-page {
-    font-family: Arial, sans-serif;
-    background: #f1f4f8;
-    padding: 30px 15px;
-    color: #263445;
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: #f1f4f8;
+  padding: 30px 15px;
+  color: #263445;
+  line-height: 1.6;
+}
+
+body.cars-page * {
+  box-sizing: border-box;
 }
 
 body.cars-page .container {
-    max-width: 1150px;
-    margin: auto;
+  width: 100%;
+  max-width: 1150px;
+  margin: auto;
 }
 
 body.cars-page h1 {
-    text-align: center;
-    color: #17365d;
-    margin-bottom: 10px;
+  text-align: center;
+  color: #17365d;
+  margin-bottom: 10px;
+  font-size: 30px;
 }
 
 body.cars-page .description {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #667085;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #667085;
 }
 
 body.cars-page .table-wrapper {
-    overflow-x: auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px #00000012;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
 }
 
 body.cars-page table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 850px;
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
 }
 
 body.cars-page th {
-    background: #17365d;
-    color: white;
-    padding: 15px 10px;
+  background: #17365d;
+  color: white;
+  padding: 15px 10px;
+  white-space: nowrap;
 }
 
 body.cars-page td {
-    text-align: center;
-    padding: 12px 10px;
-    border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 body.cars-page .car-image {
-    width: 120px;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 120px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 body.cars-page .car-name {
-    font-weight: bold;
-    color: #17365d;
+  font-weight: bold;
+  color: #17365d;
 }
 
 body.cars-page .price {
-    color: #198754;
-    font-weight: bold;
+  color: #198754;
+  font-weight: bold;
 }
 
 body.cars-page button {
-    border: none;
-    padding: 9px 13px;
-    border-radius: 6px;
-    cursor: pointer;
-    color: white;
-    margin: 3px;
-    font-size: 13px;
+  border: none;
+  padding: 9px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  margin: 3px;
+  font-size: 13px;
+  transition: 0.2s;
 }
 
 body.cars-page .details-btn {
-    background: #0d6efd;
+  background: #0d6efd;
 }
 
 body.cars-page .select-btn {
-    background: #198754;
+  background: #198754;
 }
 
 body.cars-page .continue-btn {
-    background: #17365d;
-    padding: 10px 20px;
+  background: #17365d;
+  padding: 10px 20px;
 }
 
 body.cars-page button:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
 body.cars-page .details-row {
-    display: none;
-    background: #f8fafc;
+  display: none;
+  background: #f8fafc;
 }
 
 body.cars-page .details-row td {
-    padding: 18px;
+  padding: 18px;
 }
 
 body.cars-page .details-table {
-    width: 75%;
-    min-width: 350px;
-    margin: auto;
-    border: 1px solid #dce3ec;
-    background: white;
+  width: 75%;
+  min-width: 350px;
+  margin: auto;
+  border: 1px solid #dce3ec;
+  background: white;
 }
 
 body.cars-page .details-table th {
-    background: #e7eef7;
-    color: #17365d;
+  background: #e7eef7;
+  color: #17365d;
 }
 
 body.cars-page .details-table td {
-    padding: 10px;
+  padding: 10px;
 }
 
 body.cars-page .details-title {
-    margin-bottom: 12px;
-    color: #17365d;
+  margin-bottom: 12px;
+  color: #17365d;
 }
 
 /* نموذج الحجز */
 
 body.cars-page .booking-form {
-    display: none;
-    margin-top: 25px;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px #00000012;
+  display: none;
+  width: 100%;
+  margin-top: 25px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
 }
 
 body.cars-page .booking-form h2 {
-    color: #17365d;
-    margin-bottom: 20px;
-    text-align: center;
+  color: #17365d;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 body.cars-page .selected-car {
-    background: #eaf2ff;
-    color: #17365d;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 18px;
-    font-weight: bold;
+  background: #eaf2ff;
+  color: #17365d;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 body.cars-page .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 body.cars-page .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
 }
 
 body.cars-page .form-group label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 body.cars-page .form-group input {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 15px;
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+body.cars-page .form-group input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
 }
 
 body.cars-page .error-message {
-    color: #dc3545;
-    font-size: 13px;
-    min-height: 16px;
+  color: #dc3545;
+  font-size: 13px;
+  min-height: 16px;
 }
 
 body.cars-page .submit-btn {
-    background: #198754;
-    padding: 11px 25px;
-    font-size: 15px;
-    margin-top: 20px;
+  background: #198754;
+  padding: 11px 25px;
+  font-size: 15px;
+  margin-top: 20px;
 }
 
 /* نافذة ملخص الحجز */
 
 body.cars-page .summary-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.65);
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  overflow-y: auto;
 }
 
 body.cars-page .summary-modal {
-    width: 100%;
-    max-width: 520px;
-    background: white;
-    border-radius: 14px;
-    padding: 25px;
-    box-shadow: 0 15px 45px #00000035;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 15px 45px #00000035;
 }
 
 body.cars-page .summary-modal h2 {
-    color: #198754;
-    text-align: center;
-    margin-bottom: 18px;
+  color: #198754;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
 body.cars-page .summary-table {
-    width: 100%;
-    min-width: 0;
-    margin: 15px 0;
-    border-collapse: collapse;
+  width: 100%;
+  min-width: 0;
+  margin: 15px 0;
+  border-collapse: collapse;
 }
 
 body.cars-page .summary-table th,
 body.cars-page .summary-table td {
-    padding: 11px;
-    border: 1px solid #e2e8f0;
-    text-align: right;
+  padding: 11px;
+  border: 1px solid #e2e8f0;
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
 body.cars-page .summary-table th {
-    width: 42%;
-    background: #edf3fa;
-    color: #17365d;
+  width: 42%;
+  background: #edf3fa;
+  color: #17365d;
 }
 
 body.cars-page .summary-total {
-    color: #198754;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin: 16px 0;
+  color: #198754;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 16px 0;
 }
 
 body.cars-page .discount-note {
-    color: #198754;
-    text-align: center;
-    font-size: 14px;
+  color: #198754;
+  text-align: center;
+  font-size: 14px;
 }
 
 body.cars-page .close-summary-btn {
-    display: block;
-    background: #17365d;
-    padding: 11px 25px;
-    margin: 18px auto 0;
-    min-width: 120px;
+  display: block;
+  background: #17365d;
+  padding: 11px 25px;
+  margin: 18px auto 0;
+  min-width: 120px;
 }
 
 body.cars-page .footer {
-    text-align: center;
-    margin-top: 25px;
-    color: #777;
+  text-align: center;
+  margin-top: 25px;
+  color: #777;
 }
 
 body.cars-page .summary-intro {
-    text-align: center;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
-    body.cars-page .form-grid {
-        grid-template-columns: 1fr;
-    }
+/* =====================================================
+   الصفحة الثالثة: الصفحة الرئيسية home.html
+===================================================== */
 
-    body.cars-page .booking-form {
-        padding: 17px;
-    }
-
-    body.cars-page .car-image {
-        width: 90px;
-        height: 60px;
-    }
+body.home-page {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #172b3d;
+  background: #f3f6f8;
+  line-height: 1.7;
 }
-
-
-/* ===== الصفحة الرئيسية - تصميم مطوّر لمكتب التميز ===== */
 
 body.home-page *,
 body.home-page *::before,
-body.home-page *::after { box-sizing: border-box; }
-
-body.home-page {
-    margin: 0;
-    font-family: Tahoma, Arial, sans-serif;
-    color: #172b3d;
-    background: #f3f6f8;
-    line-height: 1.7;
+body.home-page *::after {
+  box-sizing: border-box;
 }
 
 body.home-page .rental-home {
-    width: min(1200px, 92%);
-    margin: 0 auto;
-    padding: 22px 0 28px;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 22px 0 28px;
 }
 
 body.home-page .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 22px;
-    padding: 15px 24px;
-    background: #102a43;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(16,42,67,.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 15px 24px;
+  background: #102a43;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(16, 42, 67, 0.14);
 }
 
 body.home-page .brand {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 body.home-page .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 49px;
-    height: 49px;
-    background: #f4b942;
-    color: #102a43;
-    border-radius: 15px;
-    font-size: 27px;
-    box-shadow: 0 5px 14px rgba(244,185,66,.22);
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  background: #f4b942;
+  color: #102a43;
+  border-radius: 15px;
+  font-size: 27px;
+  box-shadow: 0 5px 14px rgba(244, 185, 66, 0.22);
 }
 
 body.home-page .home-page-links {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
 }
 
 body.home-page .home-page-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    color: #f4f7fa;
-    text-decoration: none;
-    font-weight: 700;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    transition: .22s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  color: #f4f7fa;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: 0.22s ease;
 }
 
 body.home-page .home-page-link:hover {
-    color: #f4b942;
-    background: rgba(255,255,255,.08);
-    border-color: rgba(255,255,255,.12);
-    transform: translateY(-2px);
+  color: #f4b942;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
 }
 
-body.home-page .home-link-icon { font-size: 18px; }
+body.home-page .home-link-icon {
+  font-size: 18px;
+}
 
 body.home-page .hero {
-    position: relative;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-    min-height: 465px;
-    margin-top: 24px;
-    padding: clamp(28px, 6vw, 72px);
-    overflow: hidden;
-    color: #fff;
-    border-radius: 26px;
-    background-image:
-        linear-gradient(270deg, rgba(8,27,44,.96) 0%, rgba(8,27,44,.84) 42%, rgba(8,27,44,.22) 100%),
-        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1900&q=90");
-    background-size: cover;
-    background-position: center 56%;
-    box-shadow: 0 18px 42px rgba(16,42,67,.17);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 465px;
+  margin-top: 24px;
+  padding: clamp(28px, 6vw, 72px);
+  overflow: hidden;
+  color: #fff;
+  border-radius: 26px;
+  background-image: linear-gradient(
+      270deg,
+      rgba(8, 27, 44, 0.96) 0%,
+      rgba(8, 27, 44, 0.84) 42%,
+      rgba(8, 27, 44, 0.22) 100%
+    ),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1900&q=90");
+  background-size: cover;
+  background-position: center 56%;
+  box-shadow: 0 18px 42px rgba(16, 42, 67, 0.17);
 }
 
 body.home-page .hero::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 310px;
-    height: 310px;
-    left: -115px;
-    bottom: -180px;
-    border: 1px solid rgba(244,185,66,.45);
-    border-radius: 50%;
-    box-shadow: 0 0 0 28px rgba(244,185,66,.06), 0 0 0 58px rgba(244,185,66,.04);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 310px;
+  height: 310px;
+  left: -115px;
+  bottom: -180px;
+  border: 1px solid rgba(244, 185, 66, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(244, 185, 66, 0.06),
+    0 0 0 58px rgba(244, 185, 66, 0.04);
 }
 
 body.home-page .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
 }
 
 body.home-page .eyebrow {
-    display: inline-block;
-    margin-bottom: 15px;
-    padding: 7px 15px;
-    color: #ffdf98;
-    background: rgba(244,185,66,.15);
-    border: 1px solid rgba(244,185,66,.48);
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 7px 15px;
+  color: #ffdf98;
+  background: rgba(244, 185, 66, 0.15);
+  border: 1px solid rgba(244, 185, 66, 0.48);
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 body.home-page .hero h1 {
-    margin: 0 0 17px;
-    color: #fff;
-    font-size: clamp(31px, 5vw, 51px);
-    line-height: 1.4;
-    letter-spacing: -.5px;
+  margin: 0 0 17px;
+  color: #fff;
+  font-size: clamp(31px, 5vw, 51px);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
 }
 
 body.home-page .hero p {
-    max-width: 550px;
-    margin: 0 0 28px;
-    color: #e2eaf0;
-    font-size: 17px;
-    line-height: 2;
+  max-width: 550px;
+  margin: 0 0 28px;
+  color: #e2eaf0;
+  font-size: 17px;
+  line-height: 2;
 }
 
 body.home-page .hero-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 23px;
-    color: #142c40;
-    background: #f4b942;
-    border: 1px solid #f4b942;
-    border-radius: 11px;
-    text-decoration: none;
-    font-weight: 800;
-    box-shadow: 0 8px 20px rgba(244,185,66,.22);
-    transition: .22s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 23px;
+  color: #142c40;
+  background: #f4b942;
+  border: 1px solid #f4b942;
+  border-radius: 11px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(244, 185, 66, 0.22);
+  transition: 0.22s ease;
 }
 
 body.home-page .hero-button:hover {
-    color: #102a43;
-    background: #ffd477;
-    border-color: #ffd477;
-    transform: translateY(-3px);
+  color: #102a43;
+  background: #ffd477;
+  border-color: #ffd477;
+  transform: translateY(-3px);
 }
 
 body.home-page .section-heading {
-    margin: 47px 0 22px;
-    text-align: center;
+  margin: 47px 0 22px;
+  text-align: center;
 }
 
 body.home-page .section-heading h2 {
-    margin: 0 0 9px;
-    color: #102a43;
-    font-size: clamp(23px, 3vw, 30px);
+  margin: 0 0 9px;
+  color: #102a43;
+  font-size: clamp(23px, 3vw, 30px);
 }
 
 body.home-page .section-heading p {
-    margin: 0;
-    color: #647789;
-    line-height: 1.9;
+  margin: 0;
+  color: #647789;
+  line-height: 1.9;
 }
 
 body.home-page .benefits {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 body.home-page .benefit {
-    position: relative;
-    padding: 29px 23px 26px;
-    text-align: center;
-    background: #fff;
-    border: 1px solid #e5ebef;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(16,42,67,.055);
-    transition: transform .22s ease, box-shadow .22s ease;
+  position: relative;
+  padding: 29px 23px 26px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5ebef;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(16, 42, 67, 0.055);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  min-width: 0;
 }
 
 body.home-page .benefit:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 32px rgba(16,42,67,.11);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 32px rgba(16, 42, 67, 0.11);
 }
 
 body.home-page .benefit-icon {
-    display: grid;
-    place-items: center;
-    width: 62px;
-    height: 62px;
-    margin: 0 auto 16px;
-    color: #102a43;
-    background: #fff4d9;
-    border: 1px solid #f7e4b7;
-    border-radius: 18px;
-    font-size: 29px;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 16px;
+  color: #102a43;
+  background: #fff4d9;
+  border: 1px solid #f7e4b7;
+  border-radius: 18px;
+  font-size: 29px;
 }
 
 body.home-page .benefit h3 {
-    margin: 0 0 10px;
-    color: #173750;
-    font-size: 19px;
+  margin: 0 0 10px;
+  color: #173750;
+  font-size: 19px;
 }
 
 body.home-page .benefit p {
-    margin: 0;
-    color: #66798a;
-    line-height: 1.9;
-    font-size: 14px;
+  margin: 0;
+  color: #66798a;
+  line-height: 1.9;
+  font-size: 14px;
 }
 
 body.home-page .bottom-cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 28px;
-    padding: 29px 34px;
-    color: #fff;
-    background: linear-gradient(115deg, #102a43, #1b4965);
-    border-radius: 19px;
-    box-shadow: 0 12px 28px rgba(16,42,67,.13);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 29px 34px;
+  color: #fff;
+  background: linear-gradient(115deg, #102a43, #1b4965);
+  border-radius: 19px;
+  box-shadow: 0 12px 28px rgba(16, 42, 67, 0.13);
 }
 
 body.home-page .bottom-cta h2 {
-    margin: 0 0 7px;
-    color: #fff;
-    font-size: 22px;
+  margin: 0 0 7px;
+  color: #fff;
+  font-size: 22px;
 }
 
 body.home-page .bottom-cta p {
-    margin: 0;
-    color: #d5e0e8;
-    line-height: 1.8;
+  margin: 0;
+  color: #d5e0e8;
+  line-height: 1.8;
 }
 
 body.home-page .bottom-cta a {
-    flex-shrink: 0;
-    padding: 12px 21px;
-    color: #102a43;
-    background: #f4b942;
-    border: 1px solid #f4b942;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 800;
-    transition: .2s ease;
+  flex-shrink: 0;
+  padding: 12px 21px;
+  color: #102a43;
+  background: #f4b942;
+  border: 1px solid #f4b942;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.2s ease;
 }
 
 body.home-page .bottom-cta a:hover {
-    background: #ffd477;
-    transform: translateY(-2px);
+  background: #ffd477;
+  transform: translateY(-2px);
 }
 
 body.home-page footer {
-    padding: 27px 10px 4px;
-    color: #718292;
+  padding: 27px 10px 4px;
+  color: #718292;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* =====================================================
+   تحسينات الشاشات المتوسطة - التابلت
+===================================================== */
+
+@media (max-width: 900px) {
+  /* صفحة من نحن */
+
+  body.about-page header {
+    padding: 18px 4%;
+  }
+
+  body.about-page .section {
+    padding: 45px 5%;
+  }
+
+  body.about-page .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* صفحة السيارات */
+
+  body.cars-page {
+    padding: 25px 12px;
+  }
+
+  body.cars-page .booking-form {
+    padding: 20px;
+  }
+
+  /* الصفحة الرئيسية */
+
+  body.home-page .topbar {
+    flex-wrap: wrap;
+  }
+
+  body.home-page .benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.home-page .hero {
+    min-height: 420px;
+  }
+}
+
+/* =====================================================
+   تحسينات الموبايل - الهواتف
+===================================================== */
+
+@media (max-width: 600px) {
+  /* إعدادات عامة */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* صفحة من نحن */
+
+  body.about-page header {
+    flex-direction: column;
     text-align: center;
+    padding: 17px 12px;
+    gap: 12px;
+  }
+
+  body.about-page header h1 {
+    font-size: 23px;
+  }
+
+  body.about-page nav {
+    width: 100%;
+    gap: 5px;
+  }
+
+  body.about-page nav a {
+    display: inline-block;
+    margin: 3px;
+    padding: 7px 9px;
     font-size: 13px;
+  }
+
+  body.about-page .hero {
+    padding: 70px 17px;
+  }
+
+  body.about-page .hero h2 {
+    font-size: 27px;
+  }
+
+  body.about-page .hero p {
+    font-size: 15px;
+  }
+
+  body.about-page .section {
+    padding: 35px 16px;
+  }
+
+  body.about-page .section-title {
+    font-size: 23px;
+    margin-bottom: 22px;
+  }
+
+  body.about-page .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  body.about-page .card {
+    padding: 20px;
+  }
+
+  body.about-page footer {
+    padding: 18px 12px;
+    font-size: 13px;
+  }
+
+  /* صفحة السيارات */
+
+  body.cars-page {
+    padding: 18px 10px;
+  }
+
+  body.cars-page h1 {
+    font-size: 24px;
+  }
+
+  body.cars-page .description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  body.cars-page .table-wrapper {
+    border-radius: 8px;
+  }
+
+  body.cars-page table {
+    min-width: 850px;
+  }
+
+  body.cars-page th,
+  body.cars-page td {
+    padding: 10px 7px;
+    font-size: 13px;
+  }
+
+  body.cars-page .car-image {
+    width: 90px;
+    height: 60px;
+  }
+
+  body.cars-page button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  body.cars-page .details-table {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  body.cars-page .details-row td {
+    padding: 10px;
+  }
+
+  body.cars-page .form-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  body.cars-page .booking-form {
+    padding: 17px 13px;
+  }
+
+  body.cars-page .booking-form h2 {
+    font-size: 21px;
+  }
+
+  body.cars-page .form-group input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  body.cars-page .submit-btn,
+  body.cars-page .continue-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  body.cars-page .summary-overlay {
+    padding: 10px;
+  }
+
+  body.cars-page .summary-modal {
+    padding: 18px 12px;
+    max-height: 92vh;
+  }
+
+  body.cars-page .summary-modal h2 {
+    font-size: 21px;
+  }
+
+  body.cars-page .summary-table th,
+  body.cars-page .summary-table td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  body.cars-page .summary-total {
+    font-size: 18px;
+  }
+
+  /* الصفحة الرئيسية */
+
+  body.home-page .rental-home {
+    width: 94%;
+    padding-top: 12px;
+  }
+
+  body.home-page .topbar {
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 12px;
+    gap: 14px;
+    border-radius: 13px;
+  }
+
+  body.home-page .brand {
+    font-size: 18px;
+  }
+
+  body.home-page .brand-mark {
+    width: 43px;
+    height: 43px;
+    font-size: 23px;
+  }
+
+  body.home-page .home-page-links {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  body.home-page .home-page-link {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  body.home-page .hero {
+    min-height: 390px;
+    margin-top: 15px;
+    padding: 30px 20px;
+    border-radius: 17px;
+    background-image: linear-gradient(
+        270deg,
+        rgba(8, 27, 44, 0.94),
+        rgba(8, 27, 44, 0.72)
+      ),
+      url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=85");
+    background-position: 57% center;
+  }
+
+  body.home-page .hero h1 {
+    font-size: 29px;
+  }
+
+  body.home-page .hero p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  body.home-page .hero-button {
+    padding: 12px 17px;
+    font-size: 14px;
+  }
+
+  body.home-page .section-heading {
+    margin: 32px 0 18px;
+  }
+
+  body.home-page .section-heading h2 {
+    font-size: 23px;
+  }
+
+  body.home-page .benefits {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  body.home-page .benefit {
+    padding: 23px 17px;
+  }
+
+  body.home-page .bottom-cta {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+    padding: 22px 17px;
+    border-radius: 15px;
+  }
+
+  body.home-page .bottom-cta h2 {
+    font-size: 19px;
+  }
+
+  body.home-page .bottom-cta a {
+    text-align: center;
+    width: 100%;
+  }
+
+  body.home-page footer {
+    padding: 22px 8px 5px;
+  }
 }
 
-@media (max-width: 760px) {
-    body.home-page .topbar {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 17px;
-    }
-    body.home-page .hero {
-        min-height: 420px;
-        padding: 32px 25px;
-        background-image:
-            linear-gradient(270deg, rgba(8,27,44,.94), rgba(8,27,44,.66)),
-            url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=85");
-        background-position: 57% center;
-    }
-    body.home-page .benefits { grid-template-columns: 1fr; }
-    body.home-page .bottom-cta {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 25px;
-    }
+/* =====================================================
+   تحسينات الهواتف الصغيرة جداً
+===================================================== */
+
+@media (max-width: 380px) {
+  body.about-page header h1 {
+    font-size: 20px;
+  }
+
+  body.about-page nav a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  body.about-page .hero h2 {
+    font-size: 23px;
+  }
+
+  body.about-page .section-title {
+    font-size: 21px;
+  }
+
+  body.cars-page {
+    padding: 14px 7px;
+  }
+
+  body.cars-page h1 {
+    font-size: 21px;
+  }
+
+  body.cars-page .booking-form {
+    padding: 14px 10px;
+  }
+
+  body.cars-page .summary-modal {
+    padding: 14px 9px;
+  }
+
+  body.cars-page .summary-table th,
+  body.cars-page .summary-table td {
+    font-size: 12px;
+    padding: 7px 4px;
+  }
+
+  body.home-page .rental-home {
+    width: 96%;
+  }
+
+  body.home-page .brand {
+    font-size: 16px;
+  }
+
+  body.home-page .home-page-link {
+    padding: 8px 7px;
+    font-size: 12px;
+  }
+
+  body.home-page .hero {
+    min-height: 370px;
+    padding: 23px 15px;
+  }
+
+  body.home-page .hero h1 {
+    font-size: 25px;
+  }
+
+  body.home-page .hero p {
+    font-size: 14px;
+  }
+
+  body.home-page .benefit {
+    padding: 20px 13px;
+  }
 }
 
-@media (max-width: 420px) {
-    body.home-page .rental-home { width: 94%; padding-top: 12px; }
-    body.home-page .brand { font-size: 17px; }
-    body.home-page .home-page-links { width: 100%; }
-    body.home-page .home-page-link { padding: 9px 10px; font-size: 13px; }
-    body.home-page .hero { min-height: 390px; padding: 25px 19px; }
-    body.home-page .hero p { font-size: 15px; }
+/* =====================================================
+   تحسينات إضافية للمس وإمكانية القراءة
+===================================================== */
+
+@media (hover: none) {
+  body.about-page .card:hover,
+  body.home-page .benefit:hover,
+  body.home-page .hero-button:hover,
+  body.home-page .bottom-cta a:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
