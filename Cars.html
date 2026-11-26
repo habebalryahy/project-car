@@ -1,308 +1,605 @@
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتب تأجير السيارات</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب تأجير السيارات</title>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .api-status {
+            text-align: center;
+            margin: 15px 0;
+            color: #17365d;
+            font-weight: bold;
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin: 22px 0;
+        }
+
+        .load-more-btn {
+            background: #17365d;
+            color: white;
+            padding: 12px 28px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .load-more-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .api-error {
+            color: #dc3545;
+        }
+
+        .api-source {
+            color: #667085;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .booking-form {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="cars-page">
 
 <div class="container">
 
-<h1>قائمة السيارات المتاحة للتأجير</h1>
+    <h1>قائمة السيارات المتاحة للتأجير</h1>
 
-<p class="description">
-اختر السيارة المناسبة لك وتعرف على مواصفاتها
-</p>
+    <p class="description">
+        اختر السيارة المناسبة لك وتعرف على مواصفاتها
+    </p>
 
-<div class="table-wrapper">
-<table>
+    <div id="apiStatus" class="api-status">
+        جاري تحميل السيارات من ملف JSON...
+    </div>
 
-<thead>
-<tr>
-<th>الصورة</th>
-<th>اسم السيارة</th>
-<th>سنة الصنع</th>
-<th>السعر اليومي</th>
-<th>التفاصيل</th>
-<th>الاختيار</th>
-</tr>
-</thead>
+    <div class="table-wrapper">
 
-<tbody>
+        <table>
 
-<!-- السيارة الأولى -->
-<tr>
-<td>
-<img class="car-image"
-src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400"
-alt="Toyota Camry">
-</td>
-<td class="car-name">Toyota Camry</td>
-<td>2023</td>
-<td class="price">45$</td>
-<td><button class="details-btn">إظهار التفاصيل</button></td>
-<td><button class="select-btn">اختيار</button></td>
-</tr>
+            <thead>
+                <tr>
+                    <th>الصورة</th>
+                    <th>اسم السيارة</th>
+                    <th>سنة الصنع</th>
+                    <th>السعر اليومي</th>
+                    <th>التفاصيل</th>
+                    <th>الاختيار</th>
+                </tr>
+            </thead>
 
-<tr class="details-row">
-<td colspan="6">
-<h3 class="details-title">مواصفات Toyota Camry</h3>
-<table class="details-table">
-<tr><th>المواصفة</th><th>القيمة</th></tr>
-<tr><td>نوع الوقود</td><td>بنزين</td></tr>
-<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
-<tr><td>عدد المقاعد</td><td>5</td></tr>
-<tr><td>عداد الكيلومترات</td><td>25,000 كم</td></tr>
-<tr><td>اللون</td><td>أبيض</td></tr>
-</table>
-</td>
-</tr>
+            <!-- يتم إنشاء السيارات من ملف JSON -->
 
-<!-- السيارة الثانية -->
-<tr>
-<td>
-<img class="car-image"
-src="https://i.blogs.es/2a9ec7/hyundai-elantra-2022-mexico_6/2560_3000.jpeg"
-alt="Hyundai Elantra">
-</td>
-<td class="car-name">Hyundai Elantra</td>
-<td>2022</td>
-<td class="price">35$</td>
-<td><button class="details-btn">إظهار التفاصيل</button></td>
-<td><button class="select-btn">اختيار</button></td>
-</tr>
+            <tbody id="carsTableBody">
+            </tbody>
 
-<tr class="details-row">
-<td colspan="6">
-<h3 class="details-title">مواصفات Hyundai Elantra</h3>
-<table class="details-table">
-<tr><th>المواصفة</th><th>القيمة</th></tr>
-<tr><td>نوع الوقود</td><td>بنزين</td></tr>
-<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
-<tr><td>عدد المقاعد</td><td>5</td></tr>
-<tr><td>عداد الكيلومترات</td><td>32,000 كم</td></tr>
-<tr><td>اللون</td><td>فضي</td></tr>
-</table>
-</td>
-</tr>
+        </table>
 
-<!-- السيارة الثالثة -->
-<tr>
-<td>
-<img class="car-image"
-src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=400"
-alt="Kia Sportage">
-</td>
-<td class="car-name">Kia Sportage</td>
-<td>2024</td>
-<td class="price">55$</td>
-<td><button class="details-btn">إظهار التفاصيل</button></td>
-<td><button class="select-btn">اختيار</button></td>
-</tr>
+    </div>
 
-<tr class="details-row">
-<td colspan="6">
-<h3 class="details-title">مواصفات Kia Sportage</h3>
-<table class="details-table">
-<tr><th>المواصفة</th><th>القيمة</th></tr>
-<tr><td>نوع الوقود</td><td>بنزين</td></tr>
-<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
-<tr><td>عدد المقاعد</td><td>5</td></tr>
-<tr><td>عداد الكيلومترات</td><td>15,000 كم</td></tr>
-<tr><td>اللون</td><td>أسود</td></tr>
-</table>
-</td>
-</tr>
+    <div class="load-more-container">
 
-<!-- السيارة الرابعة -->
-<tr>
-<td>
-<img class="car-image"
-src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400"
-alt="Mercedes C200">
-</td>
-<td class="car-name">Mercedes C200</td>
-<td>2023</td>
-<td class="price">85$</td>
-<td><button class="details-btn">إظهار التفاصيل</button></td>
-<td><button class="select-btn">اختيار</button></td>
-</tr>
+        <button type="button"
+                id="loadMoreBtn"
+                class="load-more-btn"
+                disabled>
+            جاري تحميل السيارات...
+        </button>
 
-<tr class="details-row">
-<td colspan="6">
-<h3 class="details-title">مواصفات Mercedes C200</h3>
-<table class="details-table">
-<tr><th>المواصفة</th><th>القيمة</th></tr>
-<tr><td>نوع الوقود</td><td>بنزين</td></tr>
-<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
-<tr><td>عدد المقاعد</td><td>5</td></tr>
-<tr><td>عداد الكيلومترات</td><td>18,000 كم</td></tr>
-<tr><td>اللون</td><td>رمادي</td></tr>
-</table>
-</td>
-</tr>
+    </div>
 
-<!-- السيارة الخامسة -->
-<tr>
-<td>
-<img class="car-image"
-src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400"
-alt="BMW 320i">
-</td>
-<td class="car-name">BMW 320i</td>
-<td>2022</td>
-<td class="price">75$</td>
-<td><button class="details-btn">إظهار التفاصيل</button></td>
-<td><button class="select-btn">اختيار</button></td>
-</tr>
+    <p class="api-source">
+        مصدر بيانات السيارات: ملف cars.json المحلي.
+        الأسعار والصور والمواصفات بيانات تجريبية.
+    </p>
 
-<tr class="details-row">
-<td colspan="6">
-<h3 class="details-title">مواصفات BMW 320i</h3>
-<table class="details-table">
-<tr><th>المواصفة</th><th>القيمة</th></tr>
-<tr><td>نوع الوقود</td><td>بنزين</td></tr>
-<tr><td>ناقل الحركة</td><td>أوتوماتيك</td></tr>
-<tr><td>عدد المقاعد</td><td>5</td></tr>
-<tr><td>عداد الكيلومترات</td><td>28,000 كم</td></tr>
-<tr><td>اللون</td><td>أزرق</td></tr>
-</table>
-</td>
-</tr>
 
-</tbody>
-</table>
-</div>
+    <!-- نموذج الحجز -->
 
-<!-- نموذج الحجز -->
+    <section class="booking-form" id="bookingForm">
 
-<section class="booking-form" id="bookingForm">
+        <h2>نموذج طلب استئجار سيارة</h2>
 
-<h2>نموذج طلب استئجار سيارة</h2>
+        <div class="selected-car" id="selectedCarText"></div>
 
-<div class="selected-car" id="selectedCarText"></div>
+        <form id="rentalForm" novalidate>
 
-<form id="rentalForm" novalidate>
+            <div class="form-grid">
 
-<div class="form-grid">
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل</label>
+                    <input type="text" id="fullName" required>
+                    <small class="error-message" id="nameError"></small>
+                </div>
 
-<div class="form-group">
-<label for="fullName">الاسم الكامل</label>
-<input type="text" id="fullName" required>
-<small class="error-message" id="nameError"></small>
-</div>
+                <div class="form-group">
+                    <label for="nationalId">الرقم الوطني (11 خانة)</label>
+                    <input type="text" id="nationalId"
+                           maxlength="11" inputmode="numeric" required>
+                    <small class="error-message" id="nationalIdError"></small>
+                </div>
 
-<div class="form-group">
-<label for="nationalId">الرقم الوطني (11 خانة)</label>
-<input type="text" id="nationalId"
-maxlength="11" inputmode="numeric" required>
-<small class="error-message" id="nationalIdError"></small>
-</div>
+                <div class="form-group">
+                    <label for="startDate">تاريخ بداية التأجير</label>
+                    <input type="date" id="startDate" required>
+                    <small class="error-message" id="startDateError"></small>
+                </div>
 
-<div class="form-group">
-<label for="startDate">تاريخ بداية التأجير</label>
-<input type="date" id="startDate" required>
-<small class="error-message" id="startDateError"></small>
-</div>
+                <div class="form-group">
+                    <label for="endDate">تاريخ نهاية التأجير</label>
+                    <input type="date" id="endDate" required>
+                    <small class="error-message" id="endDateError"></small>
+                </div>
 
-<div class="form-group">
-<label for="endDate">تاريخ نهاية التأجير</label>
-<input type="date" id="endDate" required>
-<small class="error-message" id="endDateError"></small>
-</div>
+                <div class="form-group">
+                    <label for="phone">رقم الموبايل MTN أو Syriatel</label>
+                    <input type="tel" id="phone"
+                           placeholder="09XXXXXXXX" required>
+                    <small class="error-message" id="phoneError"></small>
+                </div>
 
-<div class="form-group">
-<label for="phone">رقم الموبايل MTN أو Syriatel</label>
-<input type="tel" id="phone" placeholder="09XXXXXXXX" required>
-<small class="error-message" id="phoneError"></small>
-</div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" required>
+                    <small class="error-message" id="emailError"></small>
+                </div>
 
-<div class="form-group">
-<label for="email">البريد الإلكتروني</label>
-<input type="email" id="email" required>
-<small class="error-message" id="emailError"></small>
-</div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                إرسال الطلب
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- نافذة ملخص الحجز -->
+
+    <div class="summary-overlay" id="summaryOverlay">
+
+        <div class="summary-modal">
+
+            <h2>تم التحقق من طلبك بنجاح</h2>
+
+            <p class="summary-intro">
+                ملخص تفاصيل طلب استئجار السيارة:
+            </p>
+
+            <table class="summary-table">
+
+                <tr>
+                    <th>السيارة المختارة</th>
+                    <td id="summaryCar"></td>
+                </tr>
+
+                <tr>
+                    <th>السعر اليومي</th>
+                    <td id="summaryDailyPrice"></td>
+                </tr>
+
+                <tr>
+                    <th>عدد أيام التأجير</th>
+                    <td id="summaryDays"></td>
+                </tr>
+
+                <tr>
+                    <th>المبلغ قبل الحسم</th>
+                    <td id="summaryBeforeDiscount"></td>
+                </tr>
+
+                <tr>
+                    <th>قيمة الحسم</th>
+                    <td id="summaryDiscount"></td>
+                </tr>
+
+            </table>
+
+            <div class="summary-total" id="summaryTotal"></div>
+
+            <p class="discount-note" id="summaryDiscountNote"></p>
+
+            <button type="button" class="close-summary-btn" id="closeSummary">
+                إغلاق
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        جميع الأسعار والمواصفات المعروضة تجريبية
+    </div>
 
 </div>
 
-<button type="submit" class="submit-btn">إرسال الطلب</button>
-
-</form>
-</section>
-
-<!-- نافذة ملخص الحجز -->
-
-<div class="summary-overlay" id="summaryOverlay">
-<div class="summary-modal">
-
-<h2>تم التحقق من طلبك بنجاح</h2>
-
-<p class="summary-intro">
-ملخص تفاصيل طلب استئجار السيارة:
-</p>
-
-<table class="summary-table">
-<tr>
-<th>السيارة المختارة</th>
-<td id="summaryCar"></td>
-</tr>
-
-<tr>
-<th>السعر اليومي</th>
-<td id="summaryDailyPrice"></td>
-</tr>
-
-<tr>
-<th>عدد أيام التأجير</th>
-<td id="summaryDays"></td>
-</tr>
-
-<tr>
-<th>المبلغ قبل الحسم</th>
-<td id="summaryBeforeDiscount"></td>
-</tr>
-
-<tr>
-<th>قيمة الحسم</th>
-<td id="summaryDiscount"></td>
-</tr>
-</table>
-
-<div class="summary-total" id="summaryTotal"></div>
-
-<p class="discount-note" id="summaryDiscountNote"></p>
-
-<button type="button" class="close-summary-btn" id="closeSummary">
-إغلاق
-</button>
-
-</div>
-</div>
-
-<div class="footer">
-جميع الأسعار والمواصفات المعروضة تجريبية
-</div>
-
-</div>
 
 <script>
 
 $(document).ready(function () {
 
+    // ==========================================
+    // المتغيرات العامة
+    // ==========================================
+
     var selectedCar = null;
 
-    // إظهار وإخفاء التفاصيل
+    var allCars = [];
 
-    $(".details-btn").click(function () {
+    var displayedCars = 0;
+
+    var carsPerPage = 5;
+
+
+    // ==========================================
+    // تحميل السيارات من ملف JSON
+    // ==========================================
+
+    function loadCarsFromJSON() {
+
+        $.ajax({
+
+            url: "cars.json",
+
+            method: "GET",
+
+            dataType: "json",
+
+            timeout: 15000
+
+        })
+
+        .done(function (response) {
+
+            if (!Array.isArray(response)) {
+
+                showLoadingError("تنسيق ملف JSON غير صحيح.");
+
+                return;
+
+            }
+
+            allCars = response;
+
+            if (allCars.length === 0) {
+
+                showLoadingError("لا توجد سيارات في ملف JSON.");
+
+                return;
+
+            }
+
+            // التحقق من بيانات السيارات
+
+            allCars = allCars.filter(function (car) {
+
+                return car.name &&
+                       car.image &&
+                       Number.isFinite(Number(car.price)) &&
+                       Number(car.price) > 0;
+
+            });
+
+            if (allCars.length === 0) {
+
+                showLoadingError("لا توجد سيارات ببيانات صحيحة.");
+
+                return;
+
+            }
+
+            $("#apiStatus").text(
+                "تم تحميل " + allCars.length +
+                " سيارة من ملف JSON بنجاح."
+            );
+
+            // تفعيل زر عرض المزيد
+
+            $("#loadMoreBtn")
+                .prop("disabled", false)
+                .text("عرض المزيد من السيارات");
+
+            // عرض أول خمس سيارات
+
+            displayMoreCars();
+
+        })
+
+        .fail(function (xhr, status, error) {
+
+            console.error("JSON Error:", error);
+
+            showLoadingError(
+                "تعذر تحميل ملف cars.json. تأكد من وجوده في مجلد المشروع وتشغيل Live Server."
+            );
+
+        });
+
+    }
+
+
+    // ==========================================
+    // رسالة الخطأ
+    // ==========================================
+
+    function showLoadingError(message) {
+
+        $("#apiStatus").html(
+            '<span class="api-error">' + message + '</span>'
+        );
+
+        $("#loadMoreBtn")
+            .text("تعذر تحميل السيارات")
+            .prop("disabled", true);
+
+    }
+
+
+    // ==========================================
+    // إنشاء صف السيارة وتفاصيلها
+    // ==========================================
+
+    function createCarRow(car) {
+
+        // الصف الرئيسي
+
+        var carRow = $("<tr></tr>");
+
+        // الصورة
+
+        var imageCell = $("<td></td>");
+
+        $("<img>", {
+
+            class: "car-image",
+
+            src: car.image,
+
+            alt: car.name,
+
+            loading: "lazy"
+
+        }).appendTo(imageCell);
+
+        carRow.append(imageCell);
+
+        // اسم السيارة
+
+        carRow.append(
+            $("<td>", {
+                class: "car-name",
+                text: car.name
+            })
+        );
+
+        // سنة الصنع
+
+        carRow.append(
+            $("<td>", {
+                text: car.year || "غير متاحة"
+            })
+        );
+
+        // السعر
+
+        carRow.append(
+            $("<td>", {
+                class: "price",
+                text: Number(car.price) + "$"
+            })
+        );
+
+        // زر التفاصيل
+
+        carRow.append(
+            $("<td></td>").append(
+                $("<button>", {
+                    type: "button",
+                    class: "details-btn",
+                    text: "إظهار التفاصيل"
+                })
+            )
+        );
+
+        // زر الاختيار
+
+        carRow.append(
+            $("<td></td>").append(
+                $("<button>", {
+                    type: "button",
+                    class: "select-btn",
+                    text: "اختيار"
+                })
+            )
+        );
+
+
+        // ======================================
+        // صف تفاصيل السيارة
+        // ======================================
+
+        var detailsRow = $("<tr>", {
+            class: "details-row"
+        });
+
+        var detailsCell = $("<td>", {
+            colspan: 6
+        });
+
+        var detailsTitle = $("<h3>", {
+            class: "details-title",
+            text: "مواصفات " + car.name
+        });
+
+        var detailsTable = $("<table>", {
+            class: "details-table"
+        });
+
+        // عناوين الجدول
+
+        detailsTable.append(
+            $("<tr>").append(
+                $("<th>").text("المواصفة"),
+                $("<th>").text("القيمة")
+            )
+        );
+
+        // تفاصيل السيارة من JSON
+
+        var details = [
+
+            ["الشركة المصنعة", car.make || "غير متاحة"],
+
+            ["الموديل", car.model || "غير متاح"],
+
+            ["سنة الصنع", car.year || "غير متاحة"],
+
+            ["نوع الوقود", car.fuel || "غير متاح"],
+
+            ["ناقل الحركة", car.transmission || "غير متاح"],
+
+            ["عدد المقاعد", car.seats || "غير متاح"],
+
+            ["عداد الكيلومترات", car.kilometers || "غير متاح"],
+
+            ["اللون", car.color || "غير متاح"],
+
+            ["السعر اليومي", Number(car.price) + "$"]
+
+        ];
+
+        details.forEach(function (item) {
+
+            var row = $("<tr>");
+
+            $("<td>")
+                .text(item[0])
+                .appendTo(row);
+
+            $("<td>")
+                .text(item[1])
+                .appendTo(row);
+
+            detailsTable.append(row);
+
+        });
+
+        detailsCell.append(
+            detailsTitle,
+            detailsTable
+        );
+
+        detailsRow.append(detailsCell);
+
+        // إرجاع الصفين معاً
+
+        return $("<tbody>").append(
+            carRow,
+            detailsRow
+        );
+
+    }
+
+
+    // ==========================================
+    // عرض السيارات تدريجياً
+    // ==========================================
+
+    function displayMoreCars() {
+
+        var nextCars = allCars.slice(
+
+            displayedCars,
+
+            displayedCars + carsPerPage
+
+        );
+
+        nextCars.forEach(function (car) {
+
+            var rows = createCarRow(car);
+
+            $("#carsTableBody").append(
+                rows.children()
+            );
+
+        });
+
+        displayedCars += nextCars.length;
+
+
+        // تحديث حالة زر عرض المزيد
+
+        if (displayedCars >= allCars.length) {
+
+            $("#loadMoreBtn")
+                .text("تم عرض جميع السيارات")
+                .prop("disabled", true);
+
+        } else {
+
+            $("#loadMoreBtn")
+                .text("عرض المزيد من السيارات")
+                .prop("disabled", false);
+
+        }
+
+        // تحديث رسالة الحالة
+
+        $("#apiStatus").text(
+
+            "تم عرض " + displayedCars +
+            " من أصل " + allCars.length +
+            " سيارة."
+
+        );
+
+    }
+
+
+    // ==========================================
+    // زر عرض المزيد
+    // ==========================================
+
+    $("#loadMoreBtn").on("click", function () {
+
+        if (displayedCars < allCars.length) {
+
+            displayMoreCars();
+
+        }
+
+    });
+
+
+    // بدء تحميل البيانات
+
+    loadCarsFromJSON();
+
+
+    // ==========================================
+    // إظهار وإخفاء تفاصيل السيارة
+    // ==========================================
+
+    $("#carsTableBody").on("click", ".details-btn", function () {
 
         var button = $(this);
 
@@ -311,9 +608,11 @@ $(document).ready(function () {
         details.stop(true, true).slideToggle(400, function () {
 
             button.text(
+
                 details.is(":visible")
-                ? "إخفاء التفاصيل"
-                : "إظهار التفاصيل"
+                    ? "إخفاء التفاصيل"
+                    : "إظهار التفاصيل"
+
             );
 
         });
@@ -321,9 +620,11 @@ $(document).ready(function () {
     });
 
 
-    // اختيار السيارة وإظهار زر متابعة
+    // ==========================================
+    // اختيار السيارة
+    // ==========================================
 
-    $(".select-btn").click(function () {
+    $("#carsTableBody").on("click", ".select-btn", function () {
 
         var row = $(this).closest("tr");
 
@@ -334,41 +635,67 @@ $(document).ready(function () {
         var priceText = row.children("td").eq(3).text().trim();
 
         var dailyPrice = parseFloat(
+
             priceText.replace(/[^0-9.]/g, "")
+
         );
 
+        if (!carName || !Number.isFinite(dailyPrice)) {
+
+            alert("تعذر قراءة بيانات السيارة.");
+
+            return;
+
+        }
+
         selectedCar = {
+
             name: carName,
+
             year: carYear,
+
             priceText: priceText,
+
             dailyPrice: dailyPrice
+
         };
+
+
+        // إزالة أزرار المتابعة السابقة
 
         $(".continue-btn").remove();
 
-        $("#bookingForm").slideUp();
+        $("#bookingForm").stop(true, true).slideUp();
+
+
+        // إنشاء زر متابعة
 
         var continueButton = $(
-            '<button type="button" class="continue-btn">متابعة</button>'
+            '<button type="button" class="continue-btn booking-continue">متابعة</button>'
         );
 
         $(this).after(continueButton);
 
-        continueButton.click(function () {
+
+        continueButton.on("click", function () {
 
             $("#selectedCarText").text(
+
                 "السيارة المختارة: " +
                 selectedCar.name +
                 " | سنة الصنع: " +
                 selectedCar.year +
                 " | السعر اليومي: " +
                 selectedCar.priceText
+
             );
 
             $("#bookingForm").slideDown();
 
             $("html, body").animate({
+
                 scrollTop: $("#bookingForm").offset().top - 20
+
             }, 500);
 
         });
@@ -376,27 +703,38 @@ $(document).ready(function () {
     });
 
 
+    // ==========================================
     // التحقق من الرقم الوطني
+    // ==========================================
 
     $("#nationalId").on("input", function () {
 
         this.value = this.value
+
             .replace(/[^0-9]/g, "")
+
             .slice(0, 11);
 
     });
 
 
+    // ==========================================
     // تحديد تاريخ النهاية
+    // ==========================================
 
-    $("#startDate").change(function () {
+    $("#startDate").on("change", function () {
 
         var startDate = $(this).val();
 
         $("#endDate").attr("min", startDate);
 
-        if ($("#endDate").val() &&
-            $("#endDate").val() <= startDate) {
+        if (
+
+            $("#endDate").val() &&
+
+            $("#endDate").val() <= startDate
+
+        ) {
 
             $("#endDate").val("");
 
@@ -405,9 +743,11 @@ $(document).ready(function () {
     });
 
 
-    // التحقق من البيانات وحساب التكلفة
+    // ==========================================
+    // التحقق من بيانات الحجز
+    // ==========================================
 
-    $("#rentalForm").submit(function (event) {
+    $("#rentalForm").on("submit", function (event) {
 
         event.preventDefault();
 
@@ -424,15 +764,20 @@ $(document).ready(function () {
         var endDate = $("#endDate").val();
 
         var phone = $("#phone").val()
+
             .trim()
+
             .replace(/[\s()-]/g, "");
 
         var email = $("#email").val().trim();
 
 
         if (!selectedCar) {
+
             alert("يرجى اختيار سيارة أولاً.");
+
             return;
+
         }
 
 
@@ -444,7 +789,9 @@ $(document).ready(function () {
         if (!namePattern.test(fullName)) {
 
             $("#nameError").text(
+
                 "أدخل الاسم الكامل بأحرف فقط واسمين على الأقل."
+
             );
 
             isValid = false;
@@ -457,7 +804,9 @@ $(document).ready(function () {
         if (!/^[0-9]{11}$/.test(nationalId)) {
 
             $("#nationalIdError").text(
+
                 "الرقم الوطني يجب أن يتكون من 11 رقماً."
+
             );
 
             isValid = false;
@@ -470,7 +819,9 @@ $(document).ready(function () {
         if (!startDate) {
 
             $("#startDateError").text(
+
                 "يرجى تحديد تاريخ بداية التأجير."
+
             );
 
             isValid = false;
@@ -483,7 +834,9 @@ $(document).ready(function () {
         if (!endDate) {
 
             $("#endDateError").text(
+
                 "يرجى تحديد تاريخ نهاية التأجير."
+
             );
 
             isValid = false;
@@ -491,7 +844,9 @@ $(document).ready(function () {
         } else if (startDate && endDate <= startDate) {
 
             $("#endDateError").text(
+
                 "يجب أن يكون تاريخ النهاية لاحقاً لتاريخ البداية."
+
             );
 
             isValid = false;
@@ -506,7 +861,9 @@ $(document).ready(function () {
         if (!/^09[3489][0-9]{7}$/.test(localPhone)) {
 
             $("#phoneError").text(
+
                 "أدخل رقماً صحيحاً تابعاً لـ MTN أو Syriatel."
+
             );
 
             isValid = false;
@@ -522,7 +879,9 @@ $(document).ready(function () {
         if (!emailPattern.test(email)) {
 
             $("#emailError").text(
+
                 "يرجى إدخال بريد إلكتروني صحيح."
+
             );
 
             isValid = false;
@@ -530,7 +889,9 @@ $(document).ready(function () {
         }
 
 
-        // إذا نجح التحقق
+        // ======================================
+        // حساب التكلفة عند نجاح التحقق
+        // ======================================
 
         if (isValid) {
 
@@ -538,26 +899,44 @@ $(document).ready(function () {
 
             var end = new Date(endDate + "T00:00:00");
 
-            // حساب عدد الأيام
-
             var rentalDays = Math.round(
+
                 (end - start) / (1000 * 60 * 60 * 24)
+
             );
 
-            // حساب المبلغ قبل الحسم
+            if (rentalDays <= 0) {
+
+                $("#endDateError").text(
+
+                    "يجب أن تكون مدة التأجير يوماً واحداً على الأقل."
+
+                );
+
+                return;
+
+            }
+
+
+            // المبلغ قبل الحسم
 
             var subtotal =
+
                 rentalDays * selectedCar.dailyPrice;
 
-            // تطبيق حسم 10% إذا تجاوزت المدة 7 أيام
+
+            // حسم 10% إذا تجاوزت المدة 7 أيام
 
             var discountRate =
+
                 rentalDays > 7 ? 0.10 : 0;
 
             var discountAmount =
+
                 subtotal * discountRate;
 
             var total =
+
                 subtotal - discountAmount;
 
 
@@ -566,52 +945,73 @@ $(document).ready(function () {
             function money(amount) {
 
                 return amount.toLocaleString("en-US", {
+
                     minimumFractionDigits: 2,
+
                     maximumFractionDigits: 2
+
                 }) + " $";
 
             }
 
 
-            // تعبئة نافذة الملخص
+            // تعبئة ملخص الحجز
 
             $("#summaryCar").text(
+
                 selectedCar.name + " - " + selectedCar.year
+
             );
 
             $("#summaryDailyPrice").text(
+
                 money(selectedCar.dailyPrice)
+
             );
 
             $("#summaryDays").text(
+
                 rentalDays + " يوم"
+
             );
 
             $("#summaryBeforeDiscount").text(
+
                 money(subtotal)
+
             );
 
             $("#summaryDiscount").text(
+
                 discountRate > 0
-                ? "10% - " + money(discountAmount)
-                : "لا يوجد حسم"
+
+                    ? "10% - " + money(discountAmount)
+
+                    : "لا يوجد حسم"
+
             );
 
             $("#summaryTotal").text(
+
                 "المبلغ الإجمالي: " + money(total)
+
             );
 
 
             if (discountRate > 0) {
 
                 $("#summaryDiscountNote").text(
+
                     "تم تطبيق حسم 10% لأن مدة التأجير تجاوزت 7 أيام."
+
                 );
 
             } else {
 
                 $("#summaryDiscountNote").text(
+
                     "لا يوجد حسم لأن مدة التأجير 7 أيام أو أقل."
+
                 );
 
             }
@@ -620,8 +1020,11 @@ $(document).ready(function () {
             // إظهار نافذة الملخص
 
             $("#summaryOverlay")
+
                 .css("display", "flex")
+
                 .hide()
+
                 .fadeIn(250);
 
         }
@@ -629,18 +1032,18 @@ $(document).ready(function () {
     });
 
 
+    // ==========================================
     // إغلاق نافذة الملخص
+    // ==========================================
 
-    $("#closeSummary").click(function () {
+    $("#closeSummary").on("click", function () {
 
         $("#summaryOverlay").fadeOut(200);
 
     });
 
 
-    // الإغلاق عند الضغط خارج النافذة
-
-    $("#summaryOverlay").click(function (event) {
+    $("#summaryOverlay").on("click", function (event) {
 
         if (event.target === this) {
 
